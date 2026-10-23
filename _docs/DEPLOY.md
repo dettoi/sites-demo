@@ -25,6 +25,8 @@ node _template/publish.mjs
 В терминале в папке `Сайты-фриланс`:
 ```
 git init -b main
+git config user.email "ваша@почта"
+git config user.name "ваш-логин"
 git add .
 git commit -m "Сайты автосервисов: шаблон и демо"
 git remote add origin https://github.com/<логин>/sites-demo.git
