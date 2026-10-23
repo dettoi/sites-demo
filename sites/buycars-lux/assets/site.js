@@ -62,7 +62,6 @@
     const slides = $$('.slide', stage);
     const segs = $$('.seg', stage);
     const box = $('[data-slides]', stage);
-    const toggle = $('[data-toggle]', stage);
     const countEl = $('[data-count]', stage);
     const nextEl = $('[data-nextname]', stage);
     const N = slides.length;
@@ -75,7 +74,6 @@
       stage.classList.toggle('is-auto', !stopped);
       stage.classList.toggle('is-stopped', stopped);
       stage.classList.toggle('is-held', holds.size > 0);
-      toggle.setAttribute('aria-label', stopped ? 'Включить автопрокрутку' : 'Остановить автопрокрутку');
       box.setAttribute('aria-live', stopped || holds.has('focus') ? 'polite' : 'off');
     };
     const markNear = (i) => slides.forEach((s, k) => s.classList.toggle('is-near', k === i || k === (i + 1) % N || k === (i - 1 + N) % N));
@@ -113,15 +111,12 @@
       nextEl.textContent = `Далее: ${slides[(i + 1) % N].dataset.title}`;
     };
 
-    $('[data-prev]', stage).addEventListener('click', () => go(cur - 1, -1));
-    $('[data-next]', stage).addEventListener('click', () => go(cur + 1, 1));
     segs.forEach((s) => {
       s.addEventListener('click', () => go(Number(s.dataset.go)));
       $('.seg-fill', s).addEventListener('animationend', (e) => {
         if (e.animationName === 'seg-fill' && !stopped && s.classList.contains('is-active')) go(cur + 1, 1);
       });
     });
-    toggle.addEventListener('click', () => { stopped = !stopped; if (!stopped) markSegs(cur); sync(); });
 
     // hold while the pointer or keyboard focus is inside, or the stage is off screen / tab hidden
     stage.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') { holds.add('hover'); sync(); } });

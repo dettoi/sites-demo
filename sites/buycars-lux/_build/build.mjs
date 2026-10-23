@@ -6,7 +6,7 @@ import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const V = 7; // версия css/js для сброса кэша
+const V = 8; // версия css/js для сброса кэша
 
 const SITE = {
   name: 'БАЙКАРС',
@@ -353,11 +353,6 @@ function indexPage() {
     ${slides}
     </div>
     <div class="stage-ctrl">
-      <div class="stage-btns">
-        <button class="icon-btn" type="button" data-prev>${I.prev}<span class="vh">Предыдущий автомобиль</span></button>
-        <button class="icon-btn" type="button" data-toggle aria-label="Остановить автопрокрутку">${I.pause}${I.play}</button>
-        <button class="icon-btn" type="button" data-next>${I.next}<span class="vh">Следующий автомобиль</span></button>
-      </div>
       <ol class="segs" aria-label="Выбор автомобиля">
         ${cars.map((c, i) => `<li><button class="seg${i === 0 ? ' is-active' : ''}" type="button" data-go="${i}"${i === 0 ? ' aria-current="true"' : ''}><span class="seg-fill"></span><span class="vh">${esc(c.title)}</span></button></li>`).join('')}
       </ol>
