@@ -6,7 +6,7 @@ import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const V = 9; // версия css/js для сброса кэша
+const V = 11; // версия css/js для сброса кэша
 
 const SITE = {
   name: 'БАЙКАРС',
@@ -375,10 +375,9 @@ function indexPage() {
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h-sec" id="stock-h" data-rv>В наличии</h2>
-      <p class="sec-lead" data-rv>По&nbsp;две машины из&nbsp;каждого класса. Все ${n} автомобилей с&nbsp;фильтрами в&nbsp;каталоге.</p>
     </div>
     <div class="index-head" aria-hidden="true"><span></span><span>Автомобиль</span><span>Год</span><span>Пробег</span><span>Двигатель</span><span>Цена</span></div>
-    ${[['Премиум', 'от 5 млн ₽', (c) => c.price_rub >= 5e6], ['Средний класс', 'от 2 до 5 млн ₽', (c) => c.price_rub >= 2e6 && c.price_rub < 5e6], ['Бюджет', 'до 2 млн ₽', (c) => c.price_rub < 2e6]].map(([name, range, fit], g) => `<div class="tier">
+    ${[['Премиум', 'от 5 млн ₽', (c) => c.price_rub >= 5e6], ['Средний класс', 'от 2 до 5 млн ₽', (c) => c.price_rub >= 2e6 && c.price_rub < 5e6], ['Бюджет', 'до 2 млн ₽', (c) => ['mazda-rx8-2004', 'lada-granta-2023'].includes(c.slug)]].map(([name, range, fit], g) => `<div class="tier">
       <h3 class="tier-h" data-rv><span>${name}</span><small>${range}</small></h3>
       <ol class="index">
       ${cars.filter(fit).sort((a, b) => b.price_rub - a.price_rub).slice(0, 2).map((c, i) => `<li class="row" data-rv style="--rv:${i}">
@@ -399,7 +398,6 @@ function indexPage() {
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h-sec" id="detail-h" data-rv>Салоны вблизи</h2>
-      <p class="sec-lead" data-rv>На странице каждого автомобиля от&nbsp;${Math.min(...cars.map((c) => c.photos.length))} до&nbsp;${Math.max(...cars.map((c) => c.photos.length))} фотографий: кузов со&nbsp;всех сторон и&nbsp;салон.</p>
     </div>
     <ul class="details">
       ${details.map(({ c, ph, alt }, i) => `<li class="detail" data-rv style="--rv:${i}">
@@ -590,15 +588,8 @@ function contactsPage() {
       <div><dt>Канал с машинами</dt><dd><a href="${SITE.tgChannel}">${SITE.tgChannelName}</a></dd></div>
     </dl>
   </div>
-  <div class="map" data-map="${SITE.yandexWidget}">
-    <div class="map-load">
-      <p class="map-title">Карта Яндекса</p>
-      <p>Карта загружается с&nbsp;сервера Яндекса только по&nbsp;нажатию. До&nbsp;этого сайт ничего не&nbsp;передаёт Яндексу.</p>
-      <div class="actions">
-        <button class="btn btn-line" type="button" data-map-load>Показать карту</button>
-        <a class="btn btn-quiet" href="${SITE.yandexOrg}" rel="noopener">Открыть в&nbsp;Яндекс Картах${I.out}</a>
-      </div>
-    </div>
+  <div class="map">
+    <iframe src="${SITE.yandexWidget}" title="Карта: площадка БАЙКАРС на Новочеркасском шоссе" loading="lazy" allowfullscreen></iframe>
   </div>
 </div>
 ${services(p)}`;
@@ -621,7 +612,7 @@ function privacyPage() {
   <h2>Кому передаём</h2>
   <p>Никому, кроме случаев, предусмотренных законом.</p>
   <h2>Счётчики, куки и сторонние сервисы</h2>
-  <p>Сайт не&nbsp;использует счётчики посещаемости и&nbsp;рекламные куки. Шрифты загружаются с&nbsp;этого же сайта. Карта Яндекса на&nbsp;странице контактов загружается только после вашего нажатия на&nbsp;кнопку «Показать карту».</p>
+  <p>Сайт не&nbsp;использует счётчики посещаемости и&nbsp;рекламные куки. Шрифты загружаются с&nbsp;этого же сайта. На&nbsp;странице контактов встроена карта Яндекса; при её загрузке Яндекс может получать технические данные о&nbsp;посещении в&nbsp;соответствии со&nbsp;своей политикой.</p>
 </div>`;
   return page({ p, title: 'Политика обработки персональных данных, БАЙКАРС', description: 'Как БАЙКАРС обрабатывает данные из заявок на сайте.', body, cls: 'p-privacy' });
 }

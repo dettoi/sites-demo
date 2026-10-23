@@ -118,14 +118,13 @@
       });
     });
 
-    // hold while the pointer or keyboard focus is inside, or the stage is off screen / tab hidden
-    stage.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') { holds.add('hover'); sync(); } });
-    stage.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') { holds.delete('hover'); sync(); } });
-    stage.addEventListener('focusin', () => { holds.add('focus'); sync(); });
-    stage.addEventListener('focusout', (e) => { if (!stage.contains(e.relatedTarget)) { holds.delete('focus'); sync(); } });
+    // hold only while the stage is off screen or the tab is hidden
+    // no hold on hover or focus: the client wants the cars to keep moving
+    // warm every slide photo once the page has loaded, so a change never waits on the network
+    addEventListener('load', () => slides.forEach((sl) => { const im = $('img', sl); if (im) { im.loading = 'eager'; im.decode?.().catch(() => {}); } }), { once: true });
     document.addEventListener('visibilitychange', () => { document.hidden ? holds.add('hidden') : holds.delete('hidden'); sync(); });
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(([e]) => { e.isIntersecting ? holds.delete('off') : holds.add('off'); sync(); }, { threshold: 0.3 }).observe(stage);
+      new IntersectionObserver(([e]) => { e.isIntersecting ? holds.delete('off') : holds.add('off'); sync(); }, { threshold: 0 }).observe(stage);
     }
     stage.addEventListener('keydown', (e) => {
       if (e.target.closest('.stage-ctrl') && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
