@@ -1,0 +1,963 @@
+[
+ {
+  "slug": "porsche-cayenne-coupe-2025",
+  "tg_post": 1631,
+  "title": "Porsche Cayenne Coupe",
+  "make": "Porsche",
+  "year": 2025,
+  "mileage_km": 16000,
+  "price_rub": 16900000,
+  "engine_short": "бензин, 367 л.с.",
+  "fuel": "бензин",
+  "specs_extra": [
+   [
+    "Объём",
+    "3,0 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "367 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/porsche-cayenne-coupe-2025/04.jpg",
+   "thumb": "img/cars/porsche-cayenne-coupe-2025/t/04.jpg",
+   "tg": "04"
+  },
+  "photos": [
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/01.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/04.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/07.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/07.jpg",
+    "tg": "07"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/02.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/03.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/06.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/06.jpg",
+    "tg": "06"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/05.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/08.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/08.jpg",
+    "tg": "08"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/19.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/19.jpg",
+    "tg": "19"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/18.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/18.jpg",
+    "tg": "18"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/12.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/12.jpg",
+    "tg": "12"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/11.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/11.jpg",
+    "tg": "11"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/13.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/13.jpg",
+    "tg": "13"
+   },
+   {
+    "src": "img/cars/porsche-cayenne-coupe-2025/26.jpg",
+    "thumb": "img/cars/porsche-cayenne-coupe-2025/t/26.jpg",
+    "tg": "26"
+   }
+  ]
+ },
+ {
+  "slug": "bmw-x6-2023",
+  "tg_post": 1003,
+  "title": "BMW X6",
+  "make": "BMW",
+  "year": 2023,
+  "mileage_km": 89000,
+  "price_rub": 10900000,
+  "engine_short": "дизель, 298 л.с.",
+  "fuel": "дизель",
+  "specs_extra": [
+   [
+    "Объём",
+    "3,0 л"
+   ],
+   [
+    "Топливо",
+    "дизель"
+   ],
+   [
+    "Мощность",
+    "298 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/bmw-x6-2023/10.jpg",
+   "thumb": "img/cars/bmw-x6-2023/t/10.jpg",
+   "tg": "10"
+  },
+  "photos": [
+   {
+    "src": "img/cars/bmw-x6-2023/09.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/09.jpg",
+    "tg": "09"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/10.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/10.jpg",
+    "tg": "10"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/01.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/03.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/11.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/11.jpg",
+    "tg": "11"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/05.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/02.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/04.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/21.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/21.jpg",
+    "tg": "21"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/13.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/13.jpg",
+    "tg": "13"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/12.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/12.jpg",
+    "tg": "12"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/15.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/15.jpg",
+    "tg": "15"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/18.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/18.jpg",
+    "tg": "18"
+   },
+   {
+    "src": "img/cars/bmw-x6-2023/20.jpg",
+    "thumb": "img/cars/bmw-x6-2023/t/20.jpg",
+    "tg": "20"
+   }
+  ]
+ },
+ {
+  "slug": "bmw-x5-2020",
+  "tg_post": 1576,
+  "title": "BMW X5",
+  "make": "BMW",
+  "year": 2020,
+  "mileage_km": 167000,
+  "price_rub": 6200000,
+  "engine_short": "дизель, 249 л.с.",
+  "fuel": "дизель",
+  "specs_extra": [
+   [
+    "Объём",
+    "3,0 л"
+   ],
+   [
+    "Топливо",
+    "дизель"
+   ],
+   [
+    "Мощность",
+    "249 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/bmw-x5-2020/06.jpg",
+   "thumb": "img/cars/bmw-x5-2020/t/06.jpg",
+   "tg": "06"
+  },
+  "photos": [
+   {
+    "src": "img/cars/bmw-x5-2020/01.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/06.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/06.jpg",
+    "tg": "06"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/05.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/03.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/02.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/07.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/07.jpg",
+    "tg": "07"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/04.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/11.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/11.jpg",
+    "tg": "11"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/14.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/14.jpg",
+    "tg": "14"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/24.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/24.jpg",
+    "tg": "24"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/15.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/15.jpg",
+    "tg": "15"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/12.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/12.jpg",
+    "tg": "12"
+   },
+   {
+    "src": "img/cars/bmw-x5-2020/09.jpg",
+    "thumb": "img/cars/bmw-x5-2020/t/09.jpg",
+    "tg": "09"
+   }
+  ]
+ },
+ {
+  "slug": "mercedes-glc-2018",
+  "tg_post": 1105,
+  "title": "Mercedes‑Benz GLC",
+  "make": "Mercedes-Benz",
+  "year": 2018,
+  "mileage_km": 134000,
+  "price_rub": 2950000,
+  "engine_short": "бензин, 245 л.с.",
+  "fuel": "бензин",
+  "specs_extra": [
+   [
+    "Объём",
+    "3,0 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "245 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/mercedes-glc-2018/05.jpg",
+   "thumb": "img/cars/mercedes-glc-2018/t/05.jpg",
+   "tg": "05"
+  },
+  "photos": [
+   {
+    "src": "img/cars/mercedes-glc-2018/06.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/06.jpg",
+    "tg": "06"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/05.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/04.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/03.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/01.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/08.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/08.jpg",
+    "tg": "08"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/07.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/07.jpg",
+    "tg": "07"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/02.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/31.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/31.jpg",
+    "tg": "31"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/23.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/23.jpg",
+    "tg": "23"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/16.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/16.jpg",
+    "tg": "16"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/22.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/22.jpg",
+    "tg": "22"
+   },
+   {
+    "src": "img/cars/mercedes-glc-2018/21.jpg",
+    "thumb": "img/cars/mercedes-glc-2018/t/21.jpg",
+    "tg": "21"
+   }
+  ]
+ },
+ {
+  "slug": "tesla-model-x-2018",
+  "tg_post": 1959,
+  "title": "Tesla Model X",
+  "make": "Tesla",
+  "year": 2018,
+  "mileage_km": 191000,
+  "price_rub": 2890000,
+  "engine_short": "электро, 519 л.с.",
+  "fuel": "электро",
+  "specs_extra": [
+   [
+    "Топливо",
+    "электро"
+   ],
+   [
+    "Мощность",
+    "519 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/tesla-model-x-2018/02.jpg",
+   "thumb": "img/cars/tesla-model-x-2018/t/02.jpg",
+   "tg": "02"
+  },
+  "photos": [
+   {
+    "src": "img/cars/tesla-model-x-2018/04.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/02.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/06.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/06.jpg",
+    "tg": "06"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/01.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/05.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/08.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/08.jpg",
+    "tg": "08"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/03.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/07.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/07.jpg",
+    "tg": "07"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/16.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/16.jpg",
+    "tg": "16"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/15.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/15.jpg",
+    "tg": "15"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/09.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/09.jpg",
+    "tg": "09"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/13.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/13.jpg",
+    "tg": "13"
+   },
+   {
+    "src": "img/cars/tesla-model-x-2018/23.jpg",
+    "thumb": "img/cars/tesla-model-x-2018/t/23.jpg",
+    "tg": "23"
+   }
+  ]
+ },
+ {
+  "slug": "lexus-nx200-2016",
+  "tg_post": 2015,
+  "title": "Lexus NX200",
+  "make": "Lexus",
+  "year": 2016,
+  "mileage_km": 194000,
+  "price_rub": 2490000,
+  "engine_short": "бензин, 150 л.с.",
+  "fuel": "бензин",
+  "specs_extra": [
+   [
+    "Объём",
+    "2,0 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "150 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/lexus-nx200-2016/03.jpg",
+   "thumb": "img/cars/lexus-nx200-2016/t/03.jpg",
+   "tg": "03"
+  },
+  "photos": [
+   {
+    "src": "img/cars/lexus-nx200-2016/02.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/03.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/06.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/06.jpg",
+    "tg": "06"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/01.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/04.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/08.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/08.jpg",
+    "tg": "08"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/07.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/07.jpg",
+    "tg": "07"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/05.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/11.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/11.jpg",
+    "tg": "11"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/10.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/10.jpg",
+    "tg": "10"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/19.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/19.jpg",
+    "tg": "19"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/21.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/21.jpg",
+    "tg": "21"
+   },
+   {
+    "src": "img/cars/lexus-nx200-2016/25.jpg",
+    "thumb": "img/cars/lexus-nx200-2016/t/25.jpg",
+    "tg": "25"
+   }
+  ]
+ },
+ {
+  "slug": "toyota-hilux-2012",
+  "tg_post": 1071,
+  "title": "Toyota Hilux",
+  "make": "Toyota",
+  "year": 2012,
+  "mileage_km": 256000,
+  "price_rub": 1800000,
+  "engine_short": "дизель, 144 л.с.",
+  "fuel": "дизель",
+  "specs_extra": [
+   [
+    "Объём",
+    "2,5 л"
+   ],
+   [
+    "Топливо",
+    "дизель"
+   ],
+   [
+    "Мощность",
+    "144 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/toyota-hilux-2012/05.jpg",
+   "thumb": "img/cars/toyota-hilux-2012/t/05.jpg",
+   "tg": "05"
+  },
+  "photos": [
+   {
+    "src": "img/cars/toyota-hilux-2012/07.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/07.jpg",
+    "tg": "07"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/05.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/01.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/08.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/08.jpg",
+    "tg": "08"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/06.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/06.jpg",
+    "tg": "06"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/03.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/04.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/02.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/19.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/19.jpg",
+    "tg": "19"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/17.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/17.jpg",
+    "tg": "17"
+   },
+   {
+    "src": "img/cars/toyota-hilux-2012/14.jpg",
+    "thumb": "img/cars/toyota-hilux-2012/t/14.jpg",
+    "tg": "14"
+   }
+  ]
+ },
+ {
+  "slug": "bmw-z4-2009",
+  "tg_post": 1248,
+  "title": "BMW Z4",
+  "make": "BMW",
+  "year": 2009,
+  "mileage_km": 152000,
+  "price_rub": 1890000,
+  "engine_short": "бензин, 211 л.с.",
+  "fuel": "бензин",
+  "specs_extra": [
+   [
+    "Объём",
+    "2,5 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "211 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/bmw-z4-2009/03.jpg",
+   "thumb": "img/cars/bmw-z4-2009/t/03.jpg",
+   "tg": "03"
+  },
+  "photos": [
+   {
+    "src": "img/cars/bmw-z4-2009/06.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/06.jpg",
+    "tg": "06"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/03.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/05.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/01.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/07.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/07.jpg",
+    "tg": "07"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/02.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/08.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/08.jpg",
+    "tg": "08"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/09.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/09.jpg",
+    "tg": "09"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/04.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/11.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/11.jpg",
+    "tg": "11"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/10.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/10.jpg",
+    "tg": "10"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/17.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/17.jpg",
+    "tg": "17"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/15.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/15.jpg",
+    "tg": "15"
+   },
+   {
+    "src": "img/cars/bmw-z4-2009/12.jpg",
+    "thumb": "img/cars/bmw-z4-2009/t/12.jpg",
+    "tg": "12"
+   }
+  ]
+ },
+ {
+  "slug": "mazda-rx8-2004",
+  "tg_post": 1983,
+  "title": "Mazda RX-8",
+  "make": "Mazda",
+  "year": 2004,
+  "mileage_km": 85000,
+  "price_rub": 1690000,
+  "engine_short": "бензин, 215 л.с.",
+  "fuel": "бензин",
+  "specs_extra": [
+   [
+    "Объём",
+    "1,3 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "215 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/mazda-rx8-2004/03.jpg",
+   "thumb": "img/cars/mazda-rx8-2004/t/03.jpg",
+   "tg": "03"
+  },
+  "photos": [
+   {
+    "src": "img/cars/mazda-rx8-2004/02.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/03.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/07.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/07.jpg",
+    "tg": "07"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/01.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/06.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/06.jpg",
+    "tg": "06"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/05.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/08.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/08.jpg",
+    "tg": "08"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/04.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/18.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/18.jpg",
+    "tg": "18"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/12.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/12.jpg",
+    "tg": "12"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/10.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/10.jpg",
+    "tg": "10"
+   },
+   {
+    "src": "img/cars/mazda-rx8-2004/20.jpg",
+    "thumb": "img/cars/mazda-rx8-2004/t/20.jpg",
+    "tg": "20"
+   }
+  ]
+ },
+ {
+  "slug": "lada-granta-2023",
+  "tg_post": 1730,
+  "title": "Lada Granta",
+  "make": "Lada",
+  "year": 2023,
+  "mileage_km": 28000,
+  "price_rub": 890000,
+  "engine_short": "бензин, 90 л.с.",
+  "fuel": "бензин",
+  "specs_extra": [
+   [
+    "Объём",
+    "1,6 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "90 л.с."
+   ]
+  ],
+  "side": {
+   "src": "img/cars/lada-granta-2023/03.jpg",
+   "thumb": "img/cars/lada-granta-2023/t/03.jpg",
+   "tg": "03"
+  },
+  "photos": [
+   {
+    "src": "img/cars/lada-granta-2023/05.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/05.jpg",
+    "tg": "05"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/03.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/03.jpg",
+    "tg": "03"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/06.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/06.jpg",
+    "tg": "06"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/01.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/01.jpg",
+    "tg": "01"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/07.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/07.jpg",
+    "tg": "07"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/04.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/04.jpg",
+    "tg": "04"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/08.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/08.jpg",
+    "tg": "08"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/02.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/02.jpg",
+    "tg": "02"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/09.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/09.jpg",
+    "tg": "09"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/15.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/15.jpg",
+    "tg": "15"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/18.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/18.jpg",
+    "tg": "18"
+   },
+   {
+    "src": "img/cars/lada-granta-2023/14.jpg",
+    "thumb": "img/cars/lada-granta-2023/t/14.jpg",
+    "tg": "14"
+   }
+  ]
+ }
+]
