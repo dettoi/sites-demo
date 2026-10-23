@@ -5,6 +5,7 @@
   "theme": {
     "primary": "#f2b705",
     "onPrimary": "#0f1214",
+    "ink": "#16191c",
     "fonts": {
       "head": {
         "family": "Unbounded",

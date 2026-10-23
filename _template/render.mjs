@@ -52,12 +52,12 @@ export function render(c, { photo }) {
 <meta property="og:title" content="${esc(c.seo.title)}">
 <meta property="og:description" content="${esc(c.seo.description)}">
 <meta property="og:image" content="${photo(c.hero.photo)}">
-<meta name="theme-color" content="#0f1214">
+<meta name="theme-color" content="#f5f6f7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="${fontsHref(fonts)}" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>:root { --primary: ${c.theme.primary}; --on-primary: ${c.theme.onPrimary}; --font: "${fonts.body.family}", system-ui, sans-serif; --font-head: "${fonts.head.family}", system-ui, sans-serif; --head-weight: ${fonts.head.weight}; --head-track: ${fonts.head.tracking}; }</style>
+<style>:root { --primary: ${c.theme.primary}; --on-primary: ${c.theme.onPrimary}; ${c.theme.ink ? `--accent-ink: ${c.theme.ink}; ` : ''}--font: "${fonts.body.family}", system-ui, sans-serif; --font-head: "${fonts.head.family}", system-ui, sans-serif; --head-weight: ${fonts.head.weight}; --head-track: ${fonts.head.tracking}; }</style>
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org', '@type': 'AutoRepair', name: c.brand.name, telephone: k.phone,
     address: { '@type': 'PostalAddress', streetAddress: k.address, addressLocality: k.district },
@@ -107,7 +107,7 @@ ${on(c.services) ? `<section id="services"><div class="wrap">
 ${on(c.advantages) ? `<section id="why"><div class="wrap">
   <h2>${esc(c.advantages.title)}</h2>
   <div class="why">
-    ${c.advantages.items.map((a, i) => `<div><span class="num">${String(i + 1).padStart(2, '0')}</span><h3>${esc(a.title)}</h3><p>${esc(a.text)}</p></div>`).join('\n    ')}
+    ${c.advantages.items.map(a => `<div><h3>${esc(a.title)}</h3><p>${esc(a.text)}</p></div>`).join('\n    ')}
   </div>
 </div></section>` : ''}
 
@@ -132,10 +132,10 @@ ${on(c.reviews) ? `<section id="reviews"><div class="wrap">
       <div class="big">${esc(c.reviews.rating)}</div>
       <div class="stars" aria-label="5 звёзд">★★★★★</div>
       <div class="muted">${esc(c.reviews.count)} на 2ГИС</div>
-      <a href="${c.reviews.link}" target="_blank" rel="noopener">Все отзывы на 2ГИС →</a>
+      <a href="${c.reviews.link}" target="_blank" rel="noopener">Читать все отзывы на 2ГИС</a>
     </div>
     <div class="review-list">
-      ${c.reviews.items.map(r => `<article class="review"><div class="stars" aria-hidden="true">★★★★★</div><p>${esc(typo(r.text))}</p><footer><b>${esc(r.author)}</b> · 2ГИС</footer></article>`).join('\n      ')}
+      ${c.reviews.items.map(r => `<article class="review"><div class="stars" aria-hidden="true">★★★★★</div><p>${esc(typo(r.text))}</p><footer><b>${esc(r.author)}</b>, отзыв в 2ГИС</footer></article>`).join('\n      ')}
     </div>
   </div>
 </div></section>` : ''}
@@ -155,7 +155,7 @@ ${on(c.contactsBlock) ? `<section id="contacts"><div class="wrap">
   <h2>${esc(c.contactsBlock.title)}</h2>
   <div class="contacts">
     <dl>
-      <div><dt>${svg('pin')}Адрес</dt><dd>${esc(k.address)}<small>${esc(k.district)}${k.transport ? ` · ${esc(k.transport)}` : ''}</small></dd></div>
+      <div><dt>${svg('pin')}Адрес</dt><dd>${esc(k.address)}<small>${esc(k.district)}${k.transport ? `, ${esc(k.transport)}` : ''}</small></dd></div>
       <div><dt>${svg('clock')}Часы работы</dt><dd>${esc(k.hours)}</dd></div>
       <div><dt>${svg('phone')}Телефон</dt><dd><a href="${k.phoneHref}">${esc(k.phone)}</a></dd></div>
       <div class="messengers">
@@ -172,7 +172,7 @@ ${on(c.contactsBlock) ? `<section id="contacts"><div class="wrap">
 </main>
 
 <footer class="foot"><div class="wrap">
-  <span>© ${new Date().getFullYear()} ${esc(c.brand.name)} · ${esc(c.brand.category)}</span>
+  <span>© ${new Date().getFullYear()} ${esc(c.brand.name)}, ${esc(c.brand.category)}</span>
   <span>${esc(k.address)}, ${esc(k.district)}</span>
 </div></footer>
 
@@ -200,10 +200,10 @@ ${on(c.contactsBlock) ? `<section id="contacts"><div class="wrap">
       next = week[days[(d + i) % 7]];
       label = i === 0 ? '' : i === 1 ? 'завтра ' : '';
     }
-    text = next ? 'Закрыто · откроемся ' + label + 'в ' + next[0] + ':00' : 'Закрыто';
+    text = next ? 'Закрыто, откроемся ' + label + 'в ' + next[0] + ':00' : 'Закрыто';
   }
   el.classList.toggle('open', open);
-  el.querySelector('span').textContent = text + (Object.keys(week).length === 7 ? ' · без выходных' : '');
+  el.querySelector('span').textContent = text + (Object.keys(week).length === 7 ? ', без выходных' : '');
 })();
 // Форма записи
 (function () {

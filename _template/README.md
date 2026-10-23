@@ -7,7 +7,7 @@
 0. Снять данные: `node _template/fetch-2gis.mjs <ссылка 2ГИС> <slug>`. Появятся `clients/<slug>/facts-2gis.json` и `photos-2gis/`.
 1. Скопировать `clients/damir-avto/client.json` в `clients/<slug>/client.json` и заменить данные.
 2. Положить фото в `clients/<slug>/photos-2gis/` (или указать `"photosDir"` в client.json).
-3. Поменять акцент в `theme.primary` (цвет бренда клиента).
+3. Поменять акцент в `theme.primary` (цвет бренда клиента). Для светлых акцентов (жёлтый) добавить `"ink": "#16191c"`: цены и логотип станут графитовыми, акцент останется на кнопках и звёздах.
 4. Собрать: `node _template/build.mjs <slug>`, результат появится в `clients/<slug>/site/`.
 5. Посмотреть: `node _template/serve.mjs <slug>`, затем открыть http://localhost:4321.
 
