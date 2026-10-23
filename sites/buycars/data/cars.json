@@ -1,0 +1,299 @@
+[
+ {
+  "slug": "porsche-cayenne-coupe-2025",
+  "tg_post": 1631,
+  "title": "Porsche Cayenne Coupe",
+  "make": "Porsche",
+  "year": 2025,
+  "mileage_km": 16000,
+  "engine": null,
+  "engine_short": "бензин, 367 л.с.",
+  "price_rub": 16900000,
+  "specs_extra": [
+   [
+    "Объём",
+    "3,0 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "367 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/porsche-cayenne-coupe-2025/1.jpg",
+   "img/cars/porsche-cayenne-coupe-2025/2.jpg",
+   "img/cars/porsche-cayenne-coupe-2025/3.jpg"
+  ]
+ },
+ {
+  "slug": "bmw-x6-2023",
+  "tg_post": 1003,
+  "title": "BMW X6",
+  "make": "BMW",
+  "year": 2023,
+  "mileage_km": 89000,
+  "engine": null,
+  "engine_short": "дизель, 298 л.с.",
+  "price_rub": 10900000,
+  "specs_extra": [
+   [
+    "Объём",
+    "3,0 л"
+   ],
+   [
+    "Топливо",
+    "дизель"
+   ],
+   [
+    "Мощность",
+    "298 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/bmw-x6-2023/1.jpg",
+   "img/cars/bmw-x6-2023/2.jpg",
+   "img/cars/bmw-x6-2023/3.jpg"
+  ]
+ },
+ {
+  "slug": "bmw-x5-2020",
+  "tg_post": 1576,
+  "title": "BMW X5",
+  "make": "BMW",
+  "year": 2020,
+  "mileage_km": 167000,
+  "engine": null,
+  "engine_short": "дизель, 249 л.с.",
+  "price_rub": 6200000,
+  "specs_extra": [
+   [
+    "Объём",
+    "3,0 л"
+   ],
+   [
+    "Топливо",
+    "дизель"
+   ],
+   [
+    "Мощность",
+    "249 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/bmw-x5-2020/1.jpg",
+   "img/cars/bmw-x5-2020/2.jpg",
+   "img/cars/bmw-x5-2020/3.jpg"
+  ]
+ },
+ {
+  "slug": "mercedes-glc-2018",
+  "tg_post": 1105,
+  "title": "Mercedes‑Benz GLC",
+  "make": "Mercedes-Benz",
+  "year": 2018,
+  "mileage_km": 134000,
+  "engine": null,
+  "engine_short": "бензин, 245 л.с.",
+  "price_rub": 2950000,
+  "specs_extra": [
+   [
+    "Объём",
+    "3,0 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "245 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/mercedes-glc-2018/1.jpg",
+   "img/cars/mercedes-glc-2018/2.jpg",
+   "img/cars/mercedes-glc-2018/3.jpg"
+  ]
+ },
+ {
+  "slug": "tesla-model-x-2018",
+  "tg_post": 1959,
+  "title": "Tesla Model X",
+  "make": "Tesla",
+  "year": 2018,
+  "mileage_km": 191000,
+  "engine": null,
+  "engine_short": "электро, 519 л.с.",
+  "price_rub": 2890000,
+  "specs_extra": [
+   [
+    "Топливо",
+    "электро"
+   ],
+   [
+    "Мощность",
+    "519 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/tesla-model-x-2018/1.jpg",
+   "img/cars/tesla-model-x-2018/2.jpg",
+   "img/cars/tesla-model-x-2018/3.jpg"
+  ]
+ },
+ {
+  "slug": "lexus-nx200-2016",
+  "tg_post": 2015,
+  "title": "Lexus NX200",
+  "make": "Lexus",
+  "year": 2016,
+  "mileage_km": 194000,
+  "engine": null,
+  "engine_short": "бензин, 150 л.с.",
+  "price_rub": 2490000,
+  "specs_extra": [
+   [
+    "Объём",
+    "2,0 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "150 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/lexus-nx200-2016/1.jpg",
+   "img/cars/lexus-nx200-2016/2.jpg",
+   "img/cars/lexus-nx200-2016/3.jpg"
+  ]
+ },
+ {
+  "slug": "toyota-hilux-2012",
+  "tg_post": 1071,
+  "title": "Toyota Hilux",
+  "make": "Toyota",
+  "year": 2012,
+  "mileage_km": 256000,
+  "engine": null,
+  "engine_short": "дизель, 144 л.с.",
+  "price_rub": 1800000,
+  "specs_extra": [
+   [
+    "Объём",
+    "2,5 л"
+   ],
+   [
+    "Топливо",
+    "дизель"
+   ],
+   [
+    "Мощность",
+    "144 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/toyota-hilux-2012/1.jpg",
+   "img/cars/toyota-hilux-2012/2.jpg",
+   "img/cars/toyota-hilux-2012/3.jpg"
+  ]
+ },
+ {
+  "slug": "bmw-z4-2009",
+  "tg_post": 1248,
+  "title": "BMW Z4",
+  "make": "BMW",
+  "year": 2009,
+  "mileage_km": 152000,
+  "engine": null,
+  "engine_short": "бензин, 211 л.с.",
+  "price_rub": 1890000,
+  "specs_extra": [
+   [
+    "Объём",
+    "2,5 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "211 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/bmw-z4-2009/1.jpg",
+   "img/cars/bmw-z4-2009/2.jpg",
+   "img/cars/bmw-z4-2009/3.jpg"
+  ]
+ },
+ {
+  "slug": "mazda-rx8-2004",
+  "tg_post": 1983,
+  "title": "Mazda RX-8",
+  "make": "Mazda",
+  "year": 2004,
+  "mileage_km": 85000,
+  "engine": null,
+  "engine_short": "бензин, 215 л.с.",
+  "price_rub": 1690000,
+  "specs_extra": [
+   [
+    "Объём",
+    "1,3 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "215 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/mazda-rx8-2004/1.jpg",
+   "img/cars/mazda-rx8-2004/2.jpg",
+   "img/cars/mazda-rx8-2004/3.jpg"
+  ],
+  "contact_photo": "img/cars/mazda-rx8-2004/2.jpg"
+ },
+ {
+  "slug": "lada-granta-2023",
+  "tg_post": 1730,
+  "title": "Lada Granta",
+  "make": "Lada",
+  "year": 2023,
+  "mileage_km": 28000,
+  "engine": null,
+  "engine_short": "бензин, 90 л.с.",
+  "price_rub": 890000,
+  "specs_extra": [
+   [
+    "Объём",
+    "1,6 л"
+   ],
+   [
+    "Топливо",
+    "бензин"
+   ],
+   [
+    "Мощность",
+    "90 л.с."
+   ]
+  ],
+  "photos": [
+   "img/cars/lada-granta-2023/1.jpg",
+   "img/cars/lada-granta-2023/2.jpg",
+   "img/cars/lada-granta-2023/3.jpg"
+  ]
+ }
+]
