@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Два стиля автосервиса</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ---------- Стиль A «Графит»: индустриальный, тёплый графит + янтарь ---------- */
+[data-style="a"] {
+  --bg: #141413; --surface: #1c1c1a; --surface-2: #252522; --line: #33332f;
+  --text: #ecE8e1; --muted: #a39e94;
+  --primary: #e8a317; --on-primary: #141413;
+  --font-head: "Oswald", sans-serif; --font-body: "Inter", sans-serif;
+  --head-case: uppercase; --head-track: .02em; --head-weight: 600;
+  --radius: 3px; --radius-lg: 4px;
+}
+/* ---------- Стиль B «Асфальт»: спокойный, холодный графит + медный акцент ---------- */
+[data-style="b"] {
+  --bg: #0f1214; --surface: #161a1d; --surface-2: #1e2327; --line: #2a3036;
+  --text: #e7ecef; --muted: #96a0a8;
+  --primary: #d9773a; --on-primary: #0f1214;
+  --font-head: "Manrope", sans-serif; --font-body: "Manrope", sans-serif;
+  --head-case: none; --head-track: -.02em; --head-weight: 800;
+  --radius: 12px; --radius-lg: 20px;
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { background: #0a0a0a; }
+body { font-family: system-ui, sans-serif; color: #ddd; background: #0a0a0a; }
+
+/* панель выбора */
+.switcher { position: sticky; top: 0; z-index: 50; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+  padding: 10px 16px; background: #000; border-bottom: 1px solid #222; font-size: 14px; }
+.switcher b { margin-right: 6px; color: #fff; }
+.switcher button { font: inherit; padding: 7px 14px; border-radius: 6px; border: 1px solid #333; background: #111; color: #ccc; cursor: pointer; }
+.switcher button[aria-pressed="true"] { background: #fff; color: #000; border-color: #fff; }
+.switcher .sep { width: 1px; height: 22px; background: #333; margin: 0 6px; }
+
+.frame { margin: 0 auto; transition: max-width .3s; }
+.frame.mobile { max-width: 390px; border-left: 1px solid #222; border-right: 1px solid #222; }
+
+/* ---------- сайт ---------- */
+.site { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.55; padding-bottom: 72px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+h1, h2, h3 { font-family: var(--font-head); font-weight: var(--head-weight); text-transform: var(--head-case); letter-spacing: var(--head-track); line-height: 1.1; }
+h1 { font-size: clamp(34px, 6vw, 64px); }
+h2 { font-size: clamp(26px, 3.6vw, 40px); margin-bottom: 28px; }
+h3 { font-size: 20px; }
+.muted { color: var(--muted); }
+section { padding: 72px 0; border-top: 1px solid var(--line); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 50px; padding: 0 24px;
+  border-radius: var(--radius); font-weight: 600; font-size: 16px; text-decoration: none; border: 1px solid transparent; cursor: pointer; font-family: var(--font-body); }
+.btn-primary { background: var(--primary); color: var(--on-primary); }
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-ghost { border-color: var(--line); color: var(--text); background: transparent; }
+.btn-ghost:hover { border-color: var(--muted); }
+
+header.top { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.logo { font-family: var(--font-head); font-weight: var(--head-weight); text-transform: var(--head-case); font-size: 22px; letter-spacing: var(--head-track); }
+.logo span { color: var(--primary); }
+.top nav { display: flex; gap: 28px; font-size: 15px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top .phone { font-weight: 600; color: var(--text); text-decoration: none; }
+
+/* фото-заглушки */
+.ph { background: repeating-linear-gradient(135deg, var(--surface) 0 14px, var(--surface-2) 14px 28px);
+  border-radius: var(--radius-lg); display: flex; align-items: flex-end; padding: 14px; color: var(--muted); font-size: 13px; min-height: 160px; }
+
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding: 40px 0 72px; }
+.hero .badge { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.hero .badge i { width: 8px; height: 8px; border-radius: 50%; background: #4fbf6a; }
+.hero p.lead { font-size: 19px; color: var(--muted); margin: 20px 0 32px; max-width: 34em; }
+.hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero .ph { min-height: 420px; }
+.facts { display: flex; gap: 32px; margin-top: 36px; flex-wrap: wrap; }
+.facts b { display: block; font-family: var(--font-head); font-size: 28px; font-weight: var(--head-weight); color: var(--text); }
+.facts span { font-size: 14px; color: var(--muted); }
+
+.prices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; }
+.price { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.price b { white-space: nowrap; color: var(--primary); font-weight: 600; }
+
+.why { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; }
+.why div { padding: 24px; background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--line); }
+.why .num { font-family: var(--font-head); color: var(--primary); font-size: 15px; margin-bottom: 12px; display: block; }
+.why p { color: var(--muted); font-size: 15px; margin-top: 8px; }
+
+.gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-auto-rows: 200px; gap: 12px; }
+.gallery .ph:first-child { grid-row: span 2; }
+
+.reviews { display: grid; grid-template-columns: 280px 1fr 1fr; gap: 20px; align-items: start; }
+.rating { padding: 28px; background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--line); }
+.rating .big { font-family: var(--font-head); font-size: 56px; font-weight: var(--head-weight); line-height: 1; }
+.stars { color: var(--primary); letter-spacing: 2px; margin: 8px 0; }
+.rating a { color: var(--text); font-size: 14px; }
+.review { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.review p { margin: 10px 0 14px; }
+.review small { color: var(--muted); }
+
+.contacts { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; }
+.contacts dl { display: grid; gap: 18px; }
+.contacts dt { color: var(--muted); font-size: 14px; }
+.contacts dd { font-size: 18px; font-weight: 500; }
+.contacts .ph { min-height: 340px; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 14px; color: var(--muted); }
+
+.mobilebar { display: none; position: sticky; bottom: 0; gap: 8px; padding: 10px 12px; background: var(--bg); border-top: 1px solid var(--line); }
+.mobilebar .btn { flex: 1; height: 48px; }
+
+/* мобильная раскладка — и для реального телефона, и для режима превью */
+@media (max-width: 760px) { .site { --m: 1; } }
+.frame.mobile .site, .site.is-mobile {}
+.frame.mobile .top nav, .frame.mobile .top .phone { display: none; }
+.frame.mobile .hero, .frame.mobile .prices, .frame.mobile .contacts, .frame.mobile .reviews { grid-template-columns: 1fr; }
+.frame.mobile .hero .ph { min-height: 240px; order: -1; }
+.frame.mobile .why { grid-template-columns: 1fr 1fr; }
+.frame.mobile .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; }
+.frame.mobile .gallery .ph:first-child { grid-column: span 2; grid-row: span 1; }
+.frame.mobile section { padding: 48px 0; }
+.frame.mobile .mobilebar { display: flex; }
+.frame.mobile h1 { font-size: 36px; }
+@media (max-width: 760px) {
+  .top nav, .top .phone { display: none; }
+  .hero, .prices, .contacts, .reviews { grid-template-columns: 1fr; }
+  .hero .ph { min-height: 240px; order: -1; }
+  .why { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; }
+  .gallery .ph:first-child { grid-column: span 2; grid-row: span 1; }
+  section { padding: 48px 0; }
+  .mobilebar { display: flex; }
+  #view-desktop, #view-mobile, .switcher .sep { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="switcher">
+  <b>Стиль:</b>
+  <button id="st-a" aria-pressed="true">A · Графит</button>
+  <button id="st-b" aria-pressed="false">B · Асфальт</button>
+  <span class="sep"></span>
+  <button id="view-desktop" aria-pressed="true">Компьютер</button>
+  <button id="view-mobile" aria-pressed="false">Телефон</button>
+</div>
+
+<div class="frame" id="frame">
+<div class="site" id="site" data-style="a">
+  <div class="wrap">
+    <header class="top">
+      <div class="logo">Авто<span>Сервис</span></div>
+      <nav><a href="#">Услуги</a><a href="#">Цены</a><a href="#">Отзывы</a><a href="#">Контакты</a></nav>
+      <a class="phone" href="#">+7 900 000-00-00</a>
+    </header>
+
+    <div class="hero">
+      <div>
+        <div class="badge"><i></i>Открыто до 21:00 · без выходных</div>
+        <h1>Шиномонтаж и ремонт авто в вашем районе</h1>
+        <p class="lead">Переобуем за 30 минут, проведём диагностику и честно скажем, что чинить сейчас, а что подождёт.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#">Позвонить</a>
+          <a class="btn btn-ghost" href="#">Записаться онлайн</a>
+        </div>
+        <div class="facts">
+          <div><b>4.8</b><span>рейтинг на 2ГИС</span></div>
+          <div><b>12 лет</b><span>работаем</span></div>
+          <div><b>4 поста</b><span>без очередей</span></div>
+        </div>
+      </div>
+      <div class="ph">фото бокса клиента</div>
+    </div>
+  </div>
+
+  <section><div class="wrap">
+    <h2>Услуги и цены</h2>
+    <div class="prices">
+      <div class="price"><span>Сезонная замена шин R13–R16</span><b>от 1 600 ₽</b></div>
+      <div class="price"><span>Балансировка колеса</span><b>от 250 ₽</b></div>
+      <div class="price"><span>Ремонт прокола</span><b>от 400 ₽</b></div>
+      <div class="price"><span>Компьютерная диагностика</span><b>от 1 000 ₽</b></div>
+      <div class="price"><span>Замена масла и фильтра</span><b>от 800 ₽</b></div>
+      <div class="price"><span>Хранение шин, сезон</span><b>от 2 500 ₽</b></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Почему к нам</h2>
+    <div class="why">
+      <div><span class="num">01</span><h3>Без очередей</h3><p>Запись на точное время, ждать не придётся.</p></div>
+      <div><span class="num">02</span><h3>Цена до работ</h3><p>Озвучиваем стоимость заранее, без доплат.</p></div>
+      <div><span class="num">03</span><h3>Гарантия</h3><p>На все работы гарантия 6 месяцев.</p></div>
+      <div><span class="num">04</span><h3>Зона ожидания</h3><p>Кофе, Wi-Fi, вид на ваш автомобиль.</p></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Наша работа</h2>
+    <div class="gallery">
+      <div class="ph">фото клиента</div><div class="ph">фото</div><div class="ph">фото</div><div class="ph">фото</div><div class="ph">фото</div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Отзывы</h2>
+    <div class="reviews">
+      <div class="rating"><div class="big">4.8</div><div class="stars">★★★★★</div><p class="muted">230 отзывов</p><br><a href="#">Все отзывы на 2ГИС →</a></div>
+      <div class="review"><div class="stars">★★★★★</div><p>Пример отзыва: быстро переобули, всё аккуратно, цена как на сайте.</p><small>Имя · 2ГИС</small></div>
+      <div class="review"><div class="stars">★★★★★</div><p>Пример отзыва: нашли проблему, которую не видели в другом сервисе.</p><small>Имя · Яндекс Карты</small></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Как нас найти</h2>
+    <div class="contacts">
+      <dl>
+        <div><dt>Адрес</dt><dd>ул. Примерная, 1</dd></div>
+        <div><dt>Часы работы</dt><dd>Ежедневно 9:00–21:00</dd></div>
+        <div><dt>Телефон</dt><dd>+7 900 000-00-00</dd></div>
+        <div><a class="btn btn-primary" href="#">Построить маршрут</a></div>
+      </dl>
+      <div class="ph">Яндекс Карта</div>
+    </div>
+  </div></section>
+
+  <footer><div class="wrap">© АвтоСервис · Политика конфиденциальности</div></footer>
+
+  <div class="mobilebar"><a class="btn btn-primary" href="#">Позвонить</a><a class="btn btn-ghost" href="#">Маршрут</a></div>
+</div>
+</div>
+
+<script>
+const site = document.getElementById('site'), frame = document.getElementById('frame');
+function press(on, off) { on.setAttribute('aria-pressed', 'true'); off.setAttribute('aria-pressed', 'false'); }
+const a = document.getElementById('st-a'), b = document.getElementById('st-b');
+a.onclick = () => { site.dataset.style = 'a'; press(a, b); };
+b.onclick = () => { site.dataset.style = 'b'; press(b, a); };
+const d = document.getElementById('view-desktop'), m = document.getElementById('view-mobile');
+d.onclick = () => { frame.classList.remove('mobile'); press(d, m); };
+m.onclick = () => { frame.classList.add('mobile'); press(m, d); };
+</script>
+</body>
+</html>

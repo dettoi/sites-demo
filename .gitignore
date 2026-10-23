@@ -1,0 +1,7 @@
+# Сырые данные 2ГИС и промежуточные сборки — только локально
+clients/*/facts-2gis.json
+clients/*/raw-2gis.json
+clients/*/photos-2gis/
+clients/*/site/
+.claude/
+node_modules/

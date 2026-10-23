@@ -1,0 +1,172 @@
+/* Стиль B · Асфальт — см. _docs/DESIGN.md. Цвет акцента клиента подставляется в :root при сборке. */
+:root {
+  --bg: #0f1214;
+  --surface: #161a1d;
+  --surface-2: #1e2327;
+  --line: #2a3036;
+  --text: #e7ecef;
+  --muted: #96a0a8;
+  --primary: #d9773a;
+  --on-primary: #0f1214;
+  --ok: #4fbf6a;
+
+  --font: "Manrope", system-ui, sans-serif;
+  --font-head: "Unbounded", system-ui, sans-serif;
+  --head-weight: 700;
+  --head-track: -0.01em;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --wrap: 1160px;
+  --section: 88px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.55; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+.muted { color: var(--muted); }
+
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+/* Заголовочный шрифт клиента (theme.fonts.head): крупные заголовки, логотип, цифры */
+h1, h2, .logo, .facts b, .rating .big { font-family: var(--font-head); font-weight: var(--head-weight); letter-spacing: var(--head-track); }
+h1 { font-size: clamp(30px, 4.8vw, 52px); line-height: 1.12; }
+h2 { font-size: clamp(24px, 3.2vw, 36px); margin-bottom: 32px; }
+h3 { font-size: 19px; font-weight: 700; }
+
+section { padding: var(--section) 0; border-top: 1px solid var(--line); scroll-margin-top: 64px; }
+
+/* иконки */
+.i { width: 20px; height: 20px; flex: none; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* кнопки */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 26px;
+  border-radius: var(--radius); border: 1px solid transparent; font: 600 16px/1 var(--font); text-decoration: none; cursor: pointer; white-space: nowrap; }
+.btn-primary { background: var(--primary); color: var(--on-primary); }
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-ghost { background: transparent; color: var(--text); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--muted); }
+.btn:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+
+/* шапка */
+.top { position: sticky; top: 0; z-index: 20; background: rgba(15, 18, 20, .88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+.logo { font-size: 19px; text-decoration: none; }
+.logo span { color: var(--primary); }
+.top nav { display: flex; gap: 28px; font-size: 15px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--text); }
+.top .phone { display: inline-flex; gap: 8px; align-items: center; font-weight: 700; text-decoration: none; }
+
+/* первый экран */
+.hero { padding: 48px 0 var(--section); }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+.status { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.status.open i { background: var(--ok); box-shadow: 0 0 0 4px rgba(79, 191, 106, .15); }
+.lead { font-size: 19px; color: var(--muted); margin: 22px 0 34px; max-width: 34em; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-photo { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 3; background: var(--surface); }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.facts { display: flex; gap: 36px; margin-top: 40px; flex-wrap: wrap; }
+.facts b { display: block; font-size: 24px; }
+.facts span { font-size: 14px; color: var(--muted); }
+
+/* услуги */
+.prices { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+.price { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.price small { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
+.price b { white-space: nowrap; color: var(--primary); font-weight: 700; }
+.price[hidden] { display: none; }
+.prices-toggle { margin-top: 28px; }
+.note { margin-top: 24px; font-size: 14px; color: var(--muted); }
+
+/* преимущества */
+.why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.why div { padding: 26px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.why .num { display: block; color: var(--primary); font-weight: 700; font-size: 14px; margin-bottom: 14px; }
+.why p { color: var(--muted); font-size: 15px; margin-top: 8px; }
+
+/* галерея */
+.gallery-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 32px; }
+.gallery-head h2 { margin-bottom: 0; }
+.gallery-nav { display: flex; gap: 10px; }
+.arrow { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--text); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.arrow:hover:not(:disabled) { border-color: var(--muted); }
+.arrow:disabled { opacity: .35; cursor: default; }
+.arrow:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.gallery { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; }
+.gallery::-webkit-scrollbar { display: none; }
+.gallery figure { flex: 0 0 calc((100% - 2 * 12px) / 3); height: 320px; scroll-snap-align: start; border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-dots { display: none; justify-content: center; gap: 8px; margin-top: 16px; }
+.gallery-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.gallery-dots i.on { background: var(--primary); }
+
+/* отзывы */
+.reviews { display: grid; grid-template-columns: 280px 1fr; gap: 16px; align-items: start; }
+.rating { padding: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); position: sticky; top: 88px; }
+.rating .big { font-size: 56px; line-height: 1; }
+.stars { color: var(--primary); letter-spacing: 3px; margin: 10px 0 4px; }
+.rating a { display: inline-block; margin-top: 18px; font-size: 15px; font-weight: 600; }
+.review-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.review { padding: 26px; border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.review p { margin: 12px 0 16px; }
+.review footer { font-size: 14px; color: var(--muted); }
+.review footer b { color: var(--text); font-weight: 600; }
+
+/* запись */
+.booking { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+.booking h2 { margin-bottom: 12px; }
+.booking form { display: flex; gap: 12px; flex-wrap: wrap; }
+.booking input { flex: 1 1 220px; height: 52px; padding: 0 18px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg); color: var(--text); font: 500 16px var(--font); }
+.booking input::placeholder { color: var(--muted); }
+.form-msg { flex-basis: 100%; font-size: 14px; color: var(--muted); min-height: 1.4em; }
+
+/* контакты */
+.contacts { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; }
+.contacts dl { display: grid; gap: 22px; align-content: start; }
+.contacts dt { display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 14px; margin-bottom: 4px; }
+.contacts dd { font-size: 18px; font-weight: 600; }
+.contacts dd small { display: block; font-size: 15px; font-weight: 400; color: var(--muted); }
+.contacts dd a { text-decoration: none; }
+.messengers { display: flex; gap: 10px; flex-wrap: wrap; }
+.messengers .btn { height: 44px; padding: 0 18px; font-size: 15px; }
+.map { border-radius: var(--radius-lg); overflow: hidden; min-height: 380px; border: 1px solid var(--line); background: var(--surface); }
+.map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; filter: grayscale(.2) brightness(.92); }
+
+.foot { border-top: 1px solid var(--line); padding: 28px 0 32px; font-size: 14px; color: var(--muted); }
+.foot .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* нижняя панель на телефоне */
+.mobilebar { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(15, 18, 20, .94); backdrop-filter: blur(10px); border-top: 1px solid var(--line); }
+.mobilebar .btn { flex: 1; height: 50px; padding: 0 12px; }
+
+@media (max-width: 960px) {
+  .why { grid-template-columns: 1fr 1fr; }
+  .reviews { grid-template-columns: 1fr; }
+  .rating { position: static; }
+}
+
+@media (max-width: 760px) {
+  :root { --section: 56px; }
+  .top nav, .top .phone { display: none; }
+  .hero { padding-top: 20px; }
+  .hero .wrap, .prices, .contacts, .booking, .review-list { grid-template-columns: 1fr; }
+  .hero-photo { order: -1; aspect-ratio: 16 / 10; }
+  .lead { font-size: 17px; margin: 16px 0 26px; }
+  .actions .btn { flex: 1 1 100%; }
+  .facts { gap: 24px; margin-top: 30px; }
+  .facts b { font-size: 22px; }
+  .why { grid-template-columns: 1fr; }
+  .gallery figure { flex-basis: 100%; height: 260px; }
+  .gallery-nav { display: none; }
+  .gallery-dots { display: flex; }
+  .booking { padding: 26px 20px; }
+  .booking .btn { flex: 1 1 100%; }
+  .map, .map iframe { min-height: 300px; }
+  .mobilebar { display: flex; }
+  body { padding-bottom: 76px; }
+}
