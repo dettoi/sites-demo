@@ -6,7 +6,7 @@ import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const V = 8; // версия css/js для сброса кэша
+const V = 9; // версия css/js для сброса кэша
 
 const SITE = {
   name: 'БАЙКАРС',
@@ -375,20 +375,23 @@ function indexPage() {
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h-sec" id="stock-h" data-rv>В наличии</h2>
-      <p class="sec-lead" data-rv>${n} автомобилей, сначала самые дорогие. В&nbsp;каталоге есть фильтр по&nbsp;цене, марке и&nbsp;топливу.</p>
-      <a class="btn btn-quiet sec-more" href="catalog.html" data-rv>Открыть каталог</a>
+      <p class="sec-lead" data-rv>По&nbsp;две машины из&nbsp;каждого класса. Все ${n} автомобилей с&nbsp;фильтрами в&nbsp;каталоге.</p>
     </div>
     <div class="index-head" aria-hidden="true"><span></span><span>Автомобиль</span><span>Год</span><span>Пробег</span><span>Двигатель</span><span>Цена</span></div>
-    <ol class="index">
-      ${cars.map((c, i) => `<li class="row" data-rv style="--rv:${i % 5}">
+    ${[['Премиум', 'от 5 млн ₽', (c) => c.price_rub >= 5e6], ['Средний класс', 'от 2 до 5 млн ₽', (c) => c.price_rub >= 2e6 && c.price_rub < 5e6], ['Бюджет', 'до 2 млн ₽', (c) => c.price_rub < 2e6]].map(([name, range, fit], g) => `<div class="tier">
+      <h3 class="tier-h" data-rv><span>${name}</span><small>${range}</small></h3>
+      <ol class="index">
+      ${cars.filter(fit).sort((a, b) => b.price_rub - a.price_rub).slice(0, 2).map((c, i) => `<li class="row" data-rv style="--rv:${i}">
         <a class="row-a" href="${carUrl(c)}" data-car>
           <span class="row-photo">${pic(p, c.photos[0], '', { thumbOnly: true })}</span>
           <span class="row-name">${esc(c.title)}</span>
           <span class="row-facts"><span class="row-year"><span class="vh">Год </span>${c.year}</span><span class="row-km"><span class="vh">Пробег </span>${km(c.mileage_km)}</span><span class="row-eng"><span class="vh">Двигатель </span>${esc(c.engine_short)}</span></span>
           <span class="row-price">${price(c)}</span>
         </a>
-      </li>`).join('\n      ')}
-    </ol>
+      </li>`).join(String.fromCharCode(10))}
+      </ol>
+    </div>`).join(String.fromCharCode(10))}
+    <div class="all-cta" data-rv><a class="btn btn-gold btn-lg all-btn" href="catalog.html">Смотреть весь каталог<span class="all-n">${n} автомобилей</span></a></div>
   </div>
 </section>
 

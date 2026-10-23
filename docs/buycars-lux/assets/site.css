@@ -572,3 +572,12 @@ html:has(.menu[open]) { overflow: hidden; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
   .js .stage.is-auto .seg.is-active .seg-fill { animation-duration: var(--slide-ms, 6500ms) !important; }
 }
+
+/* stock tiers on the home page */
+.tier + .tier { margin-top: 56px; }
+.tier-h { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 0 0 14px; font: 400 clamp(1.5rem, 1vw + 1.1rem, 2rem)/1.1 var(--f-display); color: var(--ink); }
+.tier-h small { font: 500 var(--t-sm)/1.4 var(--f-body); color: var(--ink-3); }
+.all-cta { display: flex; justify-content: center; margin-top: 64px; }
+.all-btn { --h: 76px; min-width: min(100%, 520px); padding: 0 48px; gap: 16px; font-size: 1.25rem; letter-spacing: 0.02em; }
+.all-n { font-weight: 400; opacity: 0.7; }
+@media (max-width: 40rem) { .all-btn { width: 100%; flex-direction: column; gap: 0; --h: 72px; } }
