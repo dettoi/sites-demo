@@ -5,7 +5,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const CSS_V = 1;
+const CSS_V = 2;
 
 const SITE = {
   name: 'БАЙКАРС',
@@ -59,19 +59,19 @@ const icon = {
   tg: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.6 14.2l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.2-1.7-4.4Z"/></svg>',
   phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.7 2.5C9.6 19 5 14.4 4.5 6.2A2.5 2.5 0 0 1 5 3.5Z"/></svg>',
   menu: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 8h16M4 16h16"/></svg>',
+  prev: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></svg>',
+  next: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>',
+  pause: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M9 6v12M15 6v12"/></svg>',
+  play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M8 5.5v13l10.5-6.5z"/></svg>',
 };
 
+const LOGO = JSON.parse(readFileSync(join(ROOT, '_build/logo-paths.json'), 'utf8'));
 const logo = (p, id) => `<a class="logo" href="${p}index.html" aria-label="БАЙКАРС, на главную">
-  <svg class="logo-mark" viewBox="0 0 800 112" role="img" aria-label="Логотип БАЙКАРС">
-    <defs><linearGradient id="${id}" x1="0" x2="1" y1="0" y2="0"><stop class="logo-stop-a" offset="0"/><stop class="logo-stop-b" offset="1"/></linearGradient></defs>
-      <path stroke="url(#${id})" d="M14 72C96 58 176 50 252 40 336 8 470 2 560 15c62 9 104 26 142 38 38 6 66 11 90 19"/>
-      <path stroke="url(#${id})" d="M286 42c66-22 186-26 262-17 30 5 52 12 66 19"/>
-      <path stroke="url(#${id})" d="M478 23l18 21"/>
-      <path stroke="url(#${id})" d="M80 100c22-30 88-36 118-4"/>
-      <path stroke="url(#${id})" d="M584 100c22-30 88-36 118-4"/>
-      <path stroke="url(#${id})" d="M218 92c120-8 250-10 348-2M8 90h54M722 90h66"/>
+  <svg viewBox="${LOGO.viewBox}" role="img" aria-label="Логотип БАЙКАРС">
+    <defs><linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="${LOGO.markX0}" x2="${LOGO.markX1}" y1="0" y2="0"><stop class="logo-stop-a" offset="0"/><stop class="logo-stop-b" offset="1"/></linearGradient></defs>
+    <path fill="url(#${id})" fill-rule="evenodd" d="${LOGO.mark}"/>
+    <path class="logo-word" fill-rule="evenodd" d="${LOGO.word}"/>
   </svg>
-  <span class="logo-word">БАЙКАРС</span>
 </a>`;
 
 const nav = (p, current) => {
@@ -121,8 +121,8 @@ const page = ({ p = '', title, description, current, body }) => `<!doctype html>
 <meta name="description" content="${esc(description)}">
 <meta name="theme-color" content="#1f2230">
 <!-- avoid-ai-design-ignore-file: K7 (focus-visible styles live in style.css and base.css) -->
-<link rel="preload" href="${p}fonts/Unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="${p}fonts/Onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${p}fonts/Prata-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${p}fonts/Jost-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${p}style.css?v=${CSS_V}">
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -144,7 +144,7 @@ const metaList = (c) => {
 };
 const card = (p, c, i, { reveal = true, heading = 'h3', eager = false } = {}) => `<article class="car" data-price="${c.price_rub ?? 0}" data-year="${c.year ?? 0}" data-make="${esc(c.make)}" data-band="${band(c)}"${reveal ? ` data-reveal style="--i:${i % 3}"` : ''}>
   <a class="car-link" href="${p}${carUrl(c)}">
-    <figure class="car-photo" style="view-transition-name: car-${c.slug}">${img(p, c.photos[0], `${c.title}, ${c.year ?? ''}`, eager ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"')}</figure>
+    <figure class="car-photo" data-vt>${img(p, c.photos[0], `${c.title}, ${c.year ?? ''}`, eager ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"')}</figure>
     <div class="car-body">
       <${heading} class="car-title">${esc(c.title)}</${heading}>
       ${price(c) ? `<p class="car-price">${price(c)}</p>` : '<p class="car-price is-ask">Цену уточните у менеджера</p>'}
@@ -215,7 +215,7 @@ const deals = (p) => `<section class="section" id="deals" aria-labelledby="deals
   </div>
 </section>`;
 
-const lot = (p, headingLevel = 'h2', withHead = true) => `<section class="section" id="lot" aria-labelledby="lot-h">
+const lot = (p, headingLevel = 'h2', withHead = true) => `<section class="section${withHead ? '' : ' section-tight'}" id="lot" aria-labelledby="lot-h">
   <div class="container lot">
     <div class="lot-facts" data-reveal>
       ${withHead ? `<${headingLevel} id="lot-h">Площадка у трассы</${headingLevel}>` : `<${headingLevel} id="lot-h" class="visually-hidden">Адрес и связь</${headingLevel}>`}
@@ -240,8 +240,6 @@ const lot = (p, headingLevel = 'h2', withHead = true) => `<section class="sectio
 // ---------- pages ----------
 function indexPage() {
   const p = '';
-  const top = cars[0];
-  const featured = cars.slice(0, 7);
   const body = `<section class="hero" aria-labelledby="hero-h">
   <div class="container hero-head">
     <h1 id="hero-h">Автомобили в наличии на&nbsp;Новочеркасском шоссе</h1>
@@ -253,29 +251,36 @@ function indexPage() {
       </div>
     </div>
   </div>
-  <a class="container stage" href="${carUrl(top)}">
-    <span class="stage-name"><strong>${esc(top.title)}</strong><span>${[top.year && `${top.year}${nbsp}г.`, top.mileage_km != null && km(top.mileage_km), top.engine_short].filter(Boolean).join('<br>')}</span></span>
-    <div class="stage-photo" style="view-transition-name: car-${top.slug}">${img(p, top.hero || top.photos[0], `${top.title} на площадке БАЙКАРС`, 'fetchpriority="high" decoding="async"')}</div>
-    <span class="stage-price">${price(top) ? `<strong>${price(top)}</strong>` : ''}<span class="stage-more">Смотреть машину</span></span>
-  </a>
-</section>
-
-<section class="section" aria-labelledby="stock-h">
-  <div class="container">
-    <div class="section-head">
-      <h2 id="stock-h">Сейчас на площадке</h2>
-      <a class="link" href="catalog.html">Весь каталог, ${cars.length} машин</a>
-    </div>
-    <div class="stock-grid">
-      ${featured.slice(1).map((c, i) => card(p, c, i)).join('\n')}
+  <div class="showroom" data-showroom aria-roledescription="carousel" aria-label="Машины на площадке" style="--autoplay: 6000ms">
+    <div class="container">
+      <div class="show-stage" data-stage>
+        ${cars.map((c, i) => `<article class="slide${i === 0 ? ' is-active' : ''}" data-slide aria-roledescription="slide" aria-label="${i + 1} из ${cars.length}">
+          <a class="slide-link" href="${carUrl(c)}">
+            <span class="slide-name"><strong>${esc(c.title)}</strong><span>${[c.year && `${c.year}${nbsp}г.`, c.mileage_km != null && km(c.mileage_km), c.engine_short].filter(Boolean).join('<br>')}</span></span>
+            <figure class="slide-photo" data-vt>${img(p, c.hero || c.photos[0], `${c.title} на площадке БАЙКАРС`, i === 0 ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"')}</figure>
+            <span class="slide-price">${price(c) ? `<strong>${price(c)}</strong>` : '<strong class="is-ask">Цену уточните у менеджера</strong>'}<span class="slide-more">Смотреть машину</span></span>
+          </a>
+        </article>`).join(String.fromCharCode(10))}
+      </div>
+      <div class="show-bar">
+        <div class="show-ctrl">
+          <button class="round" type="button" data-prev aria-label="Предыдущая машина">${icon.prev}</button>
+          <button class="round" type="button" data-toggle aria-pressed="false" aria-label="Пауза"><span data-icon="pause">${icon.pause}</span><span data-icon="play" hidden>${icon.play}</span></button>
+          <button class="round" type="button" data-next aria-label="Следующая машина">${icon.next}</button>
+        </div>
+        <ol class="thumbs-row">
+          ${cars.map((c, i) => `<li><button class="show-thumb" type="button" data-thumb="${i}" aria-label="${esc(c.title)}"${i === 0 ? ' aria-current="true"' : ''}>${img(p, c.photos[0], '', 'loading="lazy" decoding="async"')}</button></li>`).join('')}
+        </ol>
+        <a class="link show-all" href="catalog.html">Весь каталог</a>
+      </div>
     </div>
   </div>
 </section>
 
+
 <div class="band">${deals(p)}</div>
 
 ${lot(p)}`;
-  // the stage already shows the top car, so the grid starts from the second
   return page({ p, title: 'БАЙКАРС: автомобили с пробегом на Новочеркасском шоссе', description: `Автомобили с пробегом в наличии и под заказ, обмен, кредит и выкуп. ${SITE.address}, ст. Грушевская.`, current: 'home', body });
 }
 
@@ -313,7 +318,7 @@ function carPage(c, idx) {
   <p class="crumbs"><a href="${p}catalog.html">Каталог</a> / ${esc(c.title)}</p>
   <div class="car-page">
     <div class="gallery" data-gallery>
-      <figure class="gallery-main" style="view-transition-name: car-${c.slug}">
+      <figure class="gallery-main" style="view-transition-name: car-photo">
         ${img(p, c.photos[0], `${c.title}, фото 1`, 'fetchpriority="high" decoding="async" data-main')}
       </figure>
       ${c.photos.length > 1 ? `<ul class="thumbs">${c.photos.map((src, i) => `<li><button class="thumb" type="button" data-src="${p}${src}" aria-label="Фото ${i + 1}"${i === 0 ? ' aria-current="true"' : ''}>${img(p, src, '', 'loading="lazy" decoding="async"')}</button></li>`).join('')}</ul>` : ''}
@@ -358,7 +363,6 @@ function carPage(c, idx) {
 
 function contactsPage() {
   const p = '';
-  const shot = cars.find((c) => c.contact_photo) ;
   const body = `<div class="container contact-hero">
   <h1>Приезжайте на площадку в Грушевской</h1>
   <div class="actions">
@@ -366,7 +370,6 @@ function contactsPage() {
     <a class="btn btn-ghost" href="${SITE.phoneHref}">${icon.phone}${SITE.phone}</a>
   </div>
 </div>
-${shot ? `<div class="contact-photo">${img(p, shot.contact_photo, 'Площадка БАЙКАРС, баннер с логотипом', 'fetchpriority="high" decoding="async"')}</div>` : ''}
 ${lot(p, 'h2', false)}`;
   return page({ p, title: 'Контакты БАЙКАРС: адрес, телефон, Telegram', description: `${SITE.address}, ${SITE.addressPlace}. ${SITE.phone}.`, current: 'contacts', body });
 }
