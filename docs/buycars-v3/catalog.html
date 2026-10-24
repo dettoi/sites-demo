@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Каталог автомобилей, БАЙКАРС</title>
+<meta name="description" content="Все автомобили на площадке БАЙКАРС: цены, год, пробег, двигатель и фотографии. Фильтр по цене, марке и топливу.">
+<meta name="theme-color" content="#131726">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Каталог автомобилей, БАЙКАРС">
+<meta property="og:description" content="Все автомобили на площадке БАЙКАРС: цены, год, пробег, двигатель и фотографии. Фильтр по цене, марке и топливу.">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/SofiaSansExtraCondensed-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/SofiaSans-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>html{background:#131726;color:#eef0f6;color-scheme:dark}:focus-visible{outline:2px solid #d6ef3a;outline-offset:3px}</style>
+<link rel="stylesheet" href="assets/site.css?v=302">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="p-catalog">
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="hdr" data-hdr>
+  <div class="wrap hdr-in">
+    <a class="brand " href="index.html"><img class="brand-img" src="img/logo/logo.svg" alt="БАЙКАРС, на главную" width="157" height="48"></a>
+    <nav class="hdr-nav" aria-label="Основное меню">
+      <a href="catalog.html" aria-current="page">Каталог</a>
+      <a href="index.html#services">Обмен и кредит</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="hdr-end">
+      <a class="hdr-phone" href="tel:+79044444535">+7 904 444-45-35</a>
+      <a class="btn btn-gold btn-sm hdr-tg" href="https://t.me/+79044444535"><span class="btn-ic" aria-hidden="true"><svg class="ic ic-tg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.6 14.2l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.2-1.7-4.4Z"/></svg></span><span>Написать</span></a>
+      <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="menu" data-menu-open><span class="burger" aria-hidden="true"><span></span><span></span></span><span class="vh">Открыть меню</span></button>
+    </div>
+  </div>
+</header>
+<dialog class="menu" id="menu" aria-label="Меню" data-menu>
+  <div class="menu-top wrap">
+    <a class="brand brand-menu" href="index.html"><img class="brand-img" src="img/logo/logo.svg" alt="БАЙКАРС, на главную" width="157" height="48"></a>
+    <button class="menu-btn is-x" type="button" data-menu-close><span class="burger" aria-hidden="true"><span></span><span></span></span><span class="vh">Закрыть меню</span></button>
+  </div>
+  <nav class="menu-nav wrap" aria-label="Разделы">
+    <a href="index.html"><span>Главная</span></a>
+    <a href="catalog.html"><span>Каталог</span></a>
+    <a href="index.html#services"><span>Обмен и кредит</span></a>
+    <a href="contacts.html"><span>Контакты</span></a>
+  </nav>
+  <div class="menu-foot wrap">
+    <a class="menu-phone" href="tel:+79044444535">+7 904 444-45-35</a>
+    <p>Новочеркасское шоссе, 1Д, ст. Грушевская. Без перерывов и выходных.</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="https://t.me/+79044444535"><span class="btn-ic" aria-hidden="true"><svg class="ic ic-tg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.6 14.2l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.2-1.7-4.4Z"/></svg></span><span>Telegram</span></a>
+      <a class="btn btn-line" href="tel:+79044444535"><span class="btn-ic" aria-hidden="true"><svg class="ic ic-phone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.7 2.5C9.6 19 5 14.4 4.5 6.2A2.5 2.5 0 0 1 5 3.5Z"/></svg></span><span>Позвонить</span></a>
+    </div>
+  </div>
+</dialog>
+<main id="main">
+<div class="wrap page-head">
+  <h1 class="h-page">Каталог</h1>
+  <p class="sec-lead">10 автомобилей на&nbsp;площадке. Наличие и&nbsp;цену лучше уточнить у&nbsp;менеджера перед приездом.</p>
+</div>
+<div class="wrap">
+  <form class="filters" data-filters aria-label="Фильтр автомобилей">
+    <fieldset class="f-group">
+      <legend>Цена</legend>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="band" value="all" checked><span>Любая</span></label><label class="chip"><input type="radio" name="band" value="lt2"><span>До 2 млн</span></label><label class="chip"><input type="radio" name="band" value="2to5"><span>От 2 до 5 млн</span></label><label class="chip"><input type="radio" name="band" value="gt5"><span>От 5 млн</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="f-group">
+      <legend>Топливо</legend>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="fuel" value="all" checked><span>Любое</span></label><label class="chip"><input type="radio" name="fuel" value="бензин"><span>Бензин</span></label><label class="chip"><input type="radio" name="fuel" value="дизель"><span>Дизель</span></label><label class="chip"><input type="radio" name="fuel" value="электро"><span>Электро</span></label>
+      </div>
+    </fieldset>
+    <div class="f-selects">
+      <div class="f-sel">
+        <label for="f-make">Марка</label>
+        <select id="f-make" name="make"><option value="all">Все марки</option><option value="BMW">BMW</option><option value="Lada">Lada</option><option value="Lexus">Lexus</option><option value="Mazda">Mazda</option><option value="Mercedes-Benz">Mercedes-Benz</option><option value="Porsche">Porsche</option><option value="Tesla">Tesla</option><option value="Toyota">Toyota</option></select>
+      </div>
+      <div class="f-sel">
+        <label for="f-sort">Порядок</label>
+        <select id="f-sort" name="sort">
+          <option value="price-desc">Сначала дороже</option>
+          <option value="price-asc">Сначала дешевле</option>
+          <option value="year-desc">Сначала новее</option>
+          <option value="km-asc">С меньшим пробегом</option>
+        </select>
+      </div>
+    </div>
+    <div class="f-foot">
+      <p class="f-count" role="status" aria-live="polite" data-count>Показаны все 10 автомобилей</p>
+      <button class="btn btn-quiet btn-sm" type="reset" data-reset hidden>Сбросить фильтр</button>
+    </div>
+  </form>
+  <ul class="grid" data-grid>
+    <li class="card" data-rv data-price="16900000" data-year="2025" data-km="16000" data-make="Porsche" data-fuel="бензин" data-slug="porsche-cayenne-coupe-2025">
+  <a class="card-a" href="cars/porsche-cayenne-coupe-2025.html" data-car>
+    <span class="card-photo"><img src="img/cars/porsche-cayenne-coupe-2025/01.jpg" srcset="img/cars/porsche-cayenne-coupe-2025/t/01.jpg 480w, img/cars/porsche-cayenne-coupe-2025/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Porsche Cayenne Coupe, 2025" decoding="async"><span class="card-count" aria-hidden="true">14 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Porsche Cayenne Coupe</h2>
+      <span class="card-price">16 900 000 ₽</span>
+      <span class="card-meta">2025 г., 16 000 км, бензин, 367 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="10900000" data-year="2023" data-km="89000" data-make="BMW" data-fuel="дизель" data-slug="bmw-x6-2023">
+  <a class="card-a" href="cars/bmw-x6-2023.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-x6-2023/09.jpg" srcset="img/cars/bmw-x6-2023/t/09.jpg 480w, img/cars/bmw-x6-2023/09.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW X6, 2023" decoding="async"><span class="card-count" aria-hidden="true">14 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW X6</h2>
+      <span class="card-price">10 900 000 ₽</span>
+      <span class="card-meta">2023 г., 89 000 км, дизель, 298 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="6200000" data-year="2020" data-km="167000" data-make="BMW" data-fuel="дизель" data-slug="bmw-x5-2020">
+  <a class="card-a" href="cars/bmw-x5-2020.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-x5-2020/01.jpg" srcset="img/cars/bmw-x5-2020/t/01.jpg 480w, img/cars/bmw-x5-2020/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW X5, 2020" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW X5</h2>
+      <span class="card-price">6 200 000 ₽</span>
+      <span class="card-meta">2020 г., 167 000 км, дизель, 249 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="2950000" data-year="2018" data-km="134000" data-make="Mercedes-Benz" data-fuel="бензин" data-slug="mercedes-glc-2018">
+  <a class="card-a" href="cars/mercedes-glc-2018.html" data-car>
+    <span class="card-photo"><img src="img/cars/mercedes-glc-2018/06.jpg" srcset="img/cars/mercedes-glc-2018/t/06.jpg 480w, img/cars/mercedes-glc-2018/06.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Mercedes-Benz GLC, 2018" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Mercedes-Benz GLC</h2>
+      <span class="card-price">2 950 000 ₽</span>
+      <span class="card-meta">2018 г., 134 000 км, бензин, 245 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="2890000" data-year="2018" data-km="191000" data-make="Tesla" data-fuel="электро" data-slug="tesla-model-x-2018">
+  <a class="card-a" href="cars/tesla-model-x-2018.html" data-car>
+    <span class="card-photo"><img src="img/cars/tesla-model-x-2018/04.jpg" srcset="img/cars/tesla-model-x-2018/t/04.jpg 480w, img/cars/tesla-model-x-2018/04.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Tesla Model X, 2018" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Tesla Model X</h2>
+      <span class="card-price">2 890 000 ₽</span>
+      <span class="card-meta">2018 г., 191 000 км, электро, 519 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="2490000" data-year="2016" data-km="194000" data-make="Lexus" data-fuel="бензин" data-slug="lexus-nx200-2016">
+  <a class="card-a" href="cars/lexus-nx200-2016.html" data-car>
+    <span class="card-photo"><img src="img/cars/lexus-nx200-2016/02.jpg" srcset="img/cars/lexus-nx200-2016/t/02.jpg 480w, img/cars/lexus-nx200-2016/02.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Lexus NX200, 2016" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Lexus NX200</h2>
+      <span class="card-price">2 490 000 ₽</span>
+      <span class="card-meta">2016 г., 194 000 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1890000" data-year="2009" data-km="152000" data-make="BMW" data-fuel="бензин" data-slug="bmw-z4-2009">
+  <a class="card-a" href="cars/bmw-z4-2009.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-z4-2009/06.jpg" srcset="img/cars/bmw-z4-2009/t/06.jpg 480w, img/cars/bmw-z4-2009/06.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW Z4, 2009" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">14 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW Z4</h2>
+      <span class="card-price">1 890 000 ₽</span>
+      <span class="card-meta">2009 г., 152 000 км, бензин, 211 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1800000" data-year="2012" data-km="256000" data-make="Toyota" data-fuel="дизель" data-slug="toyota-hilux-2012">
+  <a class="card-a" href="cars/toyota-hilux-2012.html" data-car>
+    <span class="card-photo"><img src="img/cars/toyota-hilux-2012/07.jpg" srcset="img/cars/toyota-hilux-2012/t/07.jpg 480w, img/cars/toyota-hilux-2012/07.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Toyota Hilux, 2012" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">11 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Toyota Hilux</h2>
+      <span class="card-price">1 800 000 ₽</span>
+      <span class="card-meta">2012 г., 256 000 км, дизель, 144 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1690000" data-year="2004" data-km="85000" data-make="Mazda" data-fuel="бензин" data-slug="mazda-rx8-2004">
+  <a class="card-a" href="cars/mazda-rx8-2004.html" data-car>
+    <span class="card-photo"><img src="img/cars/mazda-rx8-2004/02.jpg" srcset="img/cars/mazda-rx8-2004/t/02.jpg 480w, img/cars/mazda-rx8-2004/02.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Mazda RX-8, 2004" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">12 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Mazda RX-8</h2>
+      <span class="card-price">1 690 000 ₽</span>
+      <span class="card-meta">2004 г., 85 000 км, бензин, 215 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="890000" data-year="2023" data-km="28000" data-make="Lada" data-fuel="бензин" data-slug="lada-granta-2023">
+  <a class="card-a" href="cars/lada-granta-2023.html" data-car>
+    <span class="card-photo"><img src="img/cars/lada-granta-2023/05.jpg" srcset="img/cars/lada-granta-2023/t/05.jpg 480w, img/cars/lada-granta-2023/05.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Lada Granta, 2023" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">12 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Lada Granta</h2>
+      <span class="card-price">890 000 ₽</span>
+      <span class="card-meta">2023 г., 28 000 км, бензин, 90 л.с.</span>
+    </span>
+  </a>
+</li>
+  </ul>
+  <div class="empty" data-empty hidden>
+    <p class="empty-title">Под эти условия машин сейчас нет</p>
+    <p>Сбросьте фильтр или оставьте заявку на&nbsp;подбор: привезём автомобиль под заказ со&nbsp;всего мира.</p>
+    <div class="actions">
+      <button class="btn btn-line" type="button" data-reset-2>Сбросить фильтр</button>
+      <a class="btn btn-gold" href="index.html?service=order#services" data-order-link>Заявка на&nbsp;подбор</a>
+    </div>
+  </div>
+</div>
+<section class="sec place-sec" aria-labelledby="place-h">
+  <div class="wrap place">
+    <div class="place-main">
+      <h2 class="h-sec" id="place-h" data-rv>Площадка у&nbsp;трассы</h2>
+      <address class="place-addr" data-rv>Новочеркасское шоссе, 1Д<span>станица Грушевская, Аксайский район, Ростовская область</span></address>
+      <div class="actions" data-rv>
+        <a class="btn btn-line" href="contacts.html">Контакты и&nbsp;карта</a>
+        <a class="btn btn-quiet" href="https://yandex.ru/maps/org/buycars_group/227042726764/" rel="noopener">Открыть в&nbsp;Яндекс Картах<svg class="ic ic-out" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M9 6h9v9M18 6 6 18"/></svg></a>
+      </div>
+    </div>
+    <dl class="facts" data-rv>
+      <div><dt>Режим</dt><dd>Без перерывов и выходных</dd></div>
+      <div><dt>Телефон</dt><dd><a href="tel:+79044444535">+7 904 444-45-35</a></dd></div>
+      <div><dt>Telegram</dt><dd><a href="https://t.me/+79044444535">Написать менеджеру</a></dd></div>
+      <div><dt>Канал с&nbsp;машинами</dt><dd><a href="https://t.me/buycars7777">@buycars7777</a></dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-call">
+      <p class="ftr-lead">Автомобили с&nbsp;пробегом в&nbsp;наличии и&nbsp;под заказ. Обмен, кредит и&nbsp;выкуп. Без перерывов и выходных.</p>
+      <a class="ftr-phone" href="tel:+79044444535">+7 904 444-45-35</a>
+      <div class="actions">
+        <a class="btn btn-gold" href="https://t.me/+79044444535"><span class="btn-ic" aria-hidden="true"><svg class="ic ic-tg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.6 14.2l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.2-1.7-4.4Z"/></svg></span><span>Написать в&nbsp;Telegram</span></a>
+        <a class="btn btn-line" href="https://t.me/buycars7777">Канал @buycars7777</a>
+      </div>
+    </div>
+    <div class="ftr-cols">
+      <a class="brand brand-ftr" href="index.html"><img class="brand-img" src="img/logo/logo.svg" alt="БАЙКАРС, на главную" width="157" height="48"></a>
+      <div>
+        <h2 class="ftr-h">Площадка</h2>
+        <p>Новочеркасское шоссе, 1Д<br>станица Грушевская, Аксайский район, Ростовская область</p>
+      </div>
+      <div>
+        <h2 class="ftr-h">Разделы</h2>
+        <ul class="ftr-links">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="index.html#services">Обмен, кредит, заказ, выкуп</a></li>
+          <li><a href="contacts.html">Контакты и&nbsp;карта</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-base">
+      <span>БАЙКАРС, BuyCars Group</span>
+      <a href="privacy.html">Политика обработки персональных данных</a>
+    </div>
+  </div>
+</footer>
+<nav class="dock" aria-label="Быстрая связь">
+  <a class="btn btn-line" href="tel:+79044444535"><span class="btn-ic" aria-hidden="true"><svg class="ic ic-phone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.7 2.5C9.6 19 5 14.4 4.5 6.2A2.5 2.5 0 0 1 5 3.5Z"/></svg></span><span>Позвонить</span></a>
+  <a class="btn btn-gold" href="https://t.me/+79044444535"><span class="btn-ic" aria-hidden="true"><svg class="ic ic-tg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.6 14.2l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.2-1.7-4.4Z"/></svg></span><span>Telegram</span></a>
+</nav>
+<script src="assets/site.js?v=302" defer></script>
+</body>
+</html>
