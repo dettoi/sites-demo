@@ -155,9 +155,84 @@
       }));
     };
     const img = $('img', first);
-    if (img && !img.complete && img.decode) { img.decode().then(light, light); setTimeout(light, 1600); } else light();
+    // the hero sits above now, so the entrance waits until the stage scrolls into view
+    const ready = img && !img.complete && img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+    if ('IntersectionObserver' in window) {
+      const lio = new IntersectionObserver(([e]) => { if (e.isIntersecting) { lio.disconnect(); ready.then(light); } }, { threshold: 0.25 });
+      lio.observe(stage);
+    } else ready.then(light);
     sync();
   }
+
+  // ---------- interior tiles: each flips through its own shots, staggered; holds only off screen ----------
+  $$('[data-flip]').forEach((box, t) => {
+    const imgs = $$('img', box);
+    if (imgs.length < 2 || reduce()) return;
+    let k = 0, onScreen = false;
+    imgs.forEach((im) => { im.loading = 'eager'; });
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; }, { threshold: 0.2 }).observe(box);
+    setTimeout(() => setInterval(() => {
+      if (!onScreen || document.hidden) return;
+      const prev = imgs[k];
+      k = (k + 1) % imgs.length;
+      const next = imgs[k];
+      // the old shot stays underneath while the new one wipes in over it
+      prev.classList.remove('is-on', 'is-new');
+      prev.classList.add('was-on');
+      next.classList.remove('was-on', 'is-new');
+      void next.offsetWidth;
+      next.classList.add('is-on', 'is-new');
+      setTimeout(() => prev.classList.remove('was-on'), 1400);
+    }, 3800), t * 900);
+  });
+
+  // ---------- stock tiers: each column climbs one car at a time, endless; holds only off screen ----------
+  $$('[data-ticker]').forEach((win, t) => {
+    const list = $('.tier-cars', win);
+    const items = $$(':scope > li', list);
+    const n = items.length;
+    if (n <= 2 || reduce()) return;
+    items.forEach((li) => {
+      const c = li.cloneNode(true);
+      // clones must stay clickable (the window shows one of them next to the last original car);
+      // only hidden from screen readers and skipped by Tab
+      c.setAttribute('aria-hidden', 'true');
+      $$('a', c).forEach((a) => { a.tabIndex = -1; });
+      $$('img', c).forEach((im) => { im.loading = 'eager'; });
+      list.append(c);
+    });
+    win.classList.add('is-ticking');
+    let k = 0, onScreen = false, held = false;
+    // only the column under the pointer (or holding keyboard focus) stops; the others keep climbing
+    win.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') held = true; });
+    win.addEventListener('pointerleave', () => { held = false; });
+    win.addEventListener('focusin', () => { held = true; });
+    win.addEventListener('focusout', () => { held = false; });
+    const all = () => $$(':scope > li', list);
+    const move = (i, animate) => {
+      list.style.transition = animate ? '' : 'none';
+      list.style.transform = `translateY(${-all()[i].offsetTop}px)`;
+    };
+    // tallest pair of neighbours, so a two-line name never gets cut
+    const fit = () => {
+      const a = all();
+      let h = 0;
+      for (let i = 0; i < n; i++) h = Math.max(h, a[i + 2].offsetTop - a[i].offsetTop);
+      win.style.height = `${h}px`;
+      move(k, false);
+    };
+    fit();
+    addEventListener('load', fit, { once: true });
+    addEventListener('resize', fit);
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; }, { threshold: 0.2 }).observe(win);
+    setTimeout(() => setInterval(() => {
+      if (!onScreen || held || document.hidden) return;
+      k += 1;
+      move(k, true);
+      // after the last original car the clones line up exactly like the start: jump back unseen
+      if (k === n) setTimeout(() => { k = 0; move(0, false); }, 950);
+    }, 3200), t * 700);
+  });
 
   // ---------- price on the car page rolls up once, like the hero ----------
   $$('.odo[data-roll]').forEach((o) => {

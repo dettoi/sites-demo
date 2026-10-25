@@ -7,7 +7,7 @@ import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const V = 302; // версия css/js для сброса кэша
+const V = 313; // версия css/js для сброса кэша
 
 const SITE = {
   name: 'БАЙКАРС',
@@ -113,8 +113,10 @@ const brand = (p, cls = '') => logoFile
   : `<a class="brand ${cls}" href="${p}index.html" aria-label="БАЙКАРС, на главную"><span class="brand-word">БАЙКАРС</span><span class="brand-sub" aria-hidden="true">BuyCars Group</span></a>`;
 
 const navItems = [
+  ['index.html', 'Главная', 'home'],
   ['catalog.html', 'Каталог', 'catalog'],
-  ['index.html#services', 'Обмен и кредит', 'services'],
+  ['trade.html', 'Обмен, кредит, выкуп', 'trade'],
+  ['order.html', 'Под заказ', 'order'],
   ['contacts.html', 'Контакты', 'contacts'],
 ];
 
@@ -138,7 +140,6 @@ const header = (p, current) => `<a class="skip" href="#main">Перейти к �
     <button class="menu-btn is-x" type="button" data-menu-close>${lines}<span class="vh">Закрыть меню</span></button>
   </div>
   <nav class="menu-nav wrap" aria-label="Разделы">
-    <a href="${p}index.html"><span>Главная</span></a>
     ${navItems.map(([h, l]) => `<a href="${p}${h}"><span>${l}</span></a>`).join('\n    ')}
   </nav>
   <div class="menu-foot wrap">
@@ -171,7 +172,8 @@ const footer = (p) => `<footer class="ftr">
         <h2 class="ftr-h">Разделы</h2>
         <ul class="ftr-links">
           <li><a href="${p}catalog.html">Каталог</a></li>
-          <li><a href="${p}index.html#services">Обмен, кредит, заказ, выкуп</a></li>
+          <li><a href="${p}trade.html">Обмен, кредит, выкуп</a></li>
+          <li><a href="${p}order.html">Под заказ</a></li>
           <li><a href="${p}contacts.html">Контакты и&nbsp;карта</a></li>
         </ul>
       </div>
@@ -262,13 +264,15 @@ const SERVICES = [
   </div>` },
 ];
 
-const services = (p) => `<section class="sec svc-sec" id="services" aria-labelledby="svc-h">
+const services = (p, { keys = null, h = 'Обмен, кредит, заказ и&nbsp;выкуп', hTag = 'h2' } = {}) => {
+  const list = keys ? SERVICES.filter((s) => keys.includes(s.key)) : SERVICES;
+  return `<section class="sec svc-sec" id="services" aria-labelledby="svc-h">
   <div class="wrap svc">
     <div class="svc-side">
-      <h2 class="h-sec" id="svc-h" data-rv>Обмен, кредит, заказ и&nbsp;выкуп</h2>
+      <${hTag} class="h-sec" id="svc-h" data-rv>${h}</${hTag}>
       <p class="sec-lead" data-rv>Выберите, что нужно, и&nbsp;оставьте телефон. Менеджер перезвонит и&nbsp;всё обсудит.</p>
       <div class="svc-tabs" role="tablist" aria-label="Тип заявки" aria-orientation="vertical" data-tabs>
-        ${SERVICES.map((s, i) => `<button class="svc-tab" type="button" role="tab" id="tab-${s.key}" aria-controls="panel-${s.key}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>
+        ${list.map((s, i) => `<button class="svc-tab" type="button" role="tab" id="tab-${s.key}" aria-controls="panel-${s.key}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>
           <span class="svc-name">${s.name}</span><span class="svc-desc">${s.desc}</span>
         </button>`).join('\n        ')}
         <span class="svc-ind" aria-hidden="true"></span>
@@ -276,8 +280,8 @@ const services = (p) => `<section class="sec svc-sec" id="services" aria-labelle
     </div>
     <div class="bezel svc-bezel" data-rv>
       <form class="form bezel-core" data-form novalidate>
-        <input type="hidden" name="type" value="${SERVICES[0].name}" data-type>
-        ${SERVICES.map((s, i) => `<div class="panel" role="tabpanel" id="panel-${s.key}" aria-labelledby="tab-${s.key}" data-type-value="${s.name}"${i ? ' hidden' : ''}>
+        <input type="hidden" name="type" value="${list[0].name}" data-type>
+        ${list.map((s, i) => `<div class="panel" role="tabpanel" id="panel-${s.key}" aria-labelledby="tab-${s.key}" data-type-value="${s.name}"${i ? ' hidden' : ''}>
           <p class="panel-title">${s.name}: ${s.desc.charAt(0).toLowerCase() + s.desc.slice(1)}</p>
           ${s.fields('s' + i)}
         </div>`).join('\n        ')}
@@ -287,6 +291,24 @@ const services = (p) => `<section class="sec svc-sec" id="services" aria-labelle
     </div>
   </div>
 </section>`;
+};
+
+// order-from-abroad form: first screen of the home page and the order page
+const orderForm = (p, pre, hTag = 'h2') => `<aside class="bezel hero-order" aria-labelledby="${pre}-order-h">
+      <form class="form bezel-core" data-form novalidate>
+        <input type="hidden" name="type" value="Под заказ">
+        <div class="order-head">
+          <${hTag} class="order-h" id="${pre}-order-h">Под заказ со&nbsp;всего мира</${hTag}>
+          <p class="order-lead">Нет нужной машины в&nbsp;наличии? Привезём под ваш запрос.</p>
+        </div>
+        ${field(`${pre}-look`, 'Какой автомобиль ищете', `<input id="${pre}-look" name="looking_for" type="text" autocomplete="off" placeholder="Марка, модель, год" aria-describedby="${pre}-look-hint">`)}
+        <div class="form-row">
+          ${field(`${pre}-budget`, 'Бюджет, ₽', `<input id="${pre}-budget" name="budget" type="text" inputmode="numeric" autocomplete="off" aria-describedby="${pre}-budget-hint">`)}
+          ${phoneField(pre)}
+        </div>
+        ${formFoot(p, pre, 'Оформить заказ')}
+      </form>
+    </aside>`;
 
 // ---------- blocks ----------
 const card = (p, c, { h = 'h3', eager = false } = {}) => `<li class="card" data-rv data-price="${c.price_rub}" data-year="${c.year}" data-km="${c.mileage_km}" data-make="${esc(c.make)}" data-fuel="${esc(c.fuel)}" data-slug="${c.slug}">
@@ -346,22 +368,37 @@ function indexPage() {
     </article>`;
   }).join('\n    ');
 
+  // each tile flips through its own interior shots (picked by eye: no exterior, headlight or boot frames)
   const details = [
-    ['porsche-cayenne-coupe-2025', '19', 'Салон Porsche Cayenne Coupe'],
-    ['bmw-z4-2009', '11', 'Салон BMW Z4 с красной отделкой'],
-    ['bmw-x5-2020', '14', 'Кожаные кресла BMW X5'],
-    ['bmw-x6-2023', '13', 'Место водителя BMW X6'],
-  ].map(([slug, k, alt]) => {
+    ['porsche-cayenne-coupe-2025', ['19', '18', '12', '11', '13'], 'Салон Porsche Cayenne Coupe'],
+    ['bmw-z4-2009', ['11', '10', '17', '12'], 'Салон BMW Z4 с красной отделкой'],
+    ['bmw-x5-2020', ['14', '11', '24', '15', '12'], 'Кожаные кресла BMW X5'],
+    ['bmw-x6-2023', ['13', '21', '12', '15', '18'], 'Место водителя BMW X6'],
+  ].map(([slug, ks, alt]) => {
     const c = cars.find((x) => x.slug === slug);
-    const ph = c.photos.find((x) => x.tg === k);
-    return { c, ph, alt };
+    const phs = ks.map((k) => c.photos.find((x) => x.tg === k));
+    return { c, phs, alt };
   });
   const minP = Math.min(...cars.map((c) => c.price_rub));
   const maxP = Math.max(...cars.map((c) => c.price_rub));
 
-  const body = `<section class="stage" aria-roledescription="карусель" aria-label="Автомобили в наличии, от самого дорогого" data-stage>
+  const body = `<section class="hero" aria-labelledby="hero-h">
+  <img class="hero-logo" src="img/logo/logo.svg" alt="" width="2199" height="673" fetchpriority="high">
+  <div class="wrap hero-in">
+    <div class="hero-main">
+    <h1 class="hero-h" id="hero-h">БАЙКАРС продаёт автомобили с&nbsp;пробегом на&nbsp;своей площадке в&nbsp;Грушевской.</h1>
+    <p class="hero-text">Ваш автомобиль можно сдать в&nbsp;обмен, покупку оформить в&nbsp;кредит, а&nbsp;машину, которой нет в&nbsp;наличии, привезти под заказ со&nbsp;всего мира. Ещё мы выкупаем легковые автомобили.</p>
+    <div class="actions">
+      <a class="btn btn-gold btn-lg" href="${SITE.tgChat}">${ic(I.tg)}<span>Написать в&nbsp;Telegram</span></a>
+      <a class="btn btn-line btn-lg" href="${SITE.phoneHref}">${ic(I.phone)}<span>${SITE.phone}</span></a>
+    </div>
+    </div>
+    ${orderForm(p, 'h')}
+  </div>
+</section>
+
+<section class="stage" aria-roledescription="карусель" aria-label="Автомобили в наличии, от самого дорогого" data-stage>
   <div class="wrap stage-in">
-    <h1 class="stage-h1">Автомобили с&nbsp;пробегом в&nbsp;наличии и&nbsp;под&nbsp;заказ, у&nbsp;Новочеркасского шоссе</h1>
     <div class="slides" aria-live="off" data-slides>
     ${slides}
     </div>
@@ -374,36 +411,29 @@ function indexPage() {
   </div>
 </section>
 
-<section class="sec intro-sec" aria-label="О площадке">
-  <div class="wrap intro">
-    <p class="intro-text" data-rv><span class="intro-first">БАЙКАРС продаёт автомобили с&nbsp;пробегом на&nbsp;своей площадке в&nbsp;Грушевской.</span> Ваш автомобиль можно сдать в&nbsp;обмен, покупку оформить в&nbsp;кредит, а&nbsp;машину, которой нет в&nbsp;наличии, привезти под заказ со&nbsp;всего мира. Ещё мы выкупаем легковые автомобили.</p>
-    <div class="actions" data-rv>
-      <a class="btn btn-gold btn-lg" href="${SITE.tgChat}">${ic(I.tg)}<span>Написать в&nbsp;Telegram</span></a>
-      <a class="btn btn-line btn-lg" href="${SITE.phoneHref}">${ic(I.phone)}<span>${SITE.phone}</span></a>
-    </div>
-  </div>
-</section>
-
 <section class="sec stock-sec" aria-labelledby="stock-h">
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h-sec" id="stock-h" data-rv>В наличии</h2>
     </div>
-    <div class="index-head" aria-hidden="true"><span></span><span>Автомобиль</span><span>Год</span><span>Пробег</span><span>Двигатель</span><span>Цена</span></div>
-    ${[['Премиум', 'от 5 млн ₽', (c) => c.price_rub >= 5e6], ['Средний класс', 'от 2 до 5 млн ₽', (c) => c.price_rub >= 2e6 && c.price_rub < 5e6], ['Бюджет', 'до 2 млн ₽', (c) => ['mazda-rx8-2004', 'lada-granta-2023'].includes(c.slug)]].map(([name, range, fit]) => `<div class="tier">
-      <h3 class="tier-h" data-rv><span>${name}</span><small>${range}</small></h3>
-      <ol class="index" data-spot>
-      ${cars.filter(fit).sort((a, b) => b.price_rub - a.price_rub).slice(0, 2).map((c, i) => `<li class="row" data-rv style="--rv:${i}">
-        <a class="row-a" href="${carUrl(c)}" data-car>
-          <span class="row-photo">${pic(p, c.photos[0], '', { thumbOnly: true })}</span>
-          <span class="row-name">${esc(c.title)}</span>
-          <span class="row-facts"><span class="row-year"><span class="vh">Год </span>${c.year}</span><span class="row-km"><span class="vh">Пробег </span>${km(c.mileage_km)}</span><span class="row-eng"><span class="vh">Двигатель </span>${esc(c.engine_short)}</span></span>
-          <span class="row-price">${price(c)}</span>
+    <div class="all-cta" data-rv><a class="btn btn-gold btn-lg all-btn" href="catalog.html">Смотреть весь каталог<span class="all-n">${n} автомобилей</span></a></div>
+    <div class="tiers" data-rv>
+    ${[['Премиум', 'от 5 млн ₽', (c) => c.price_rub >= 5e6], ['Средний класс', 'от 2 до 5 млн ₽', (c) => c.price_rub >= 2e6 && c.price_rub < 5e6], ['Бюджет', 'до 2 млн ₽', (c) => c.price_rub < 2e6]].map(([name, range, fit]) => `<div class="tier">
+      <h3 class="tier-h"><span>${name}</span><small>${range}</small></h3>
+      <div class="tier-win" data-ticker>
+      <ul class="tier-cars">
+      ${cars.filter(fit).sort((a, b) => b.price_rub - a.price_rub).map((c) => `<li>
+        <a class="tc" href="${carUrl(c)}" data-car>
+          <span class="tc-photo">${pic(p, c.photos[0], '', { sizes: '(min-width: 1000px) 28vw, 112px' })}</span>
+          <span class="tc-name">${esc(c.title)}</span>
+          <span class="tc-meta"><b><span class="vh">Год </span>${c.year}</b> <i aria-hidden="true">·</i> <b><span class="vh">Пробег </span>${km(c.mileage_km)}</b> <i aria-hidden="true">·</i> <b><span class="vh">Двигатель </span>${esc(c.engine_short)}</b></span>
+          <span class="tc-price">${price(c)}</span>
         </a>
       </li>`).join(String.fromCharCode(10))}
-      </ol>
+      </ul>
+      </div>
     </div>`).join(String.fromCharCode(10))}
-    <div class="all-cta" data-rv><a class="btn btn-gold btn-lg all-btn" href="catalog.html">Смотреть весь каталог<span class="all-n">${n} автомобилей</span></a></div>
+    </div>
   </div>
 </section>
 
@@ -413,9 +443,9 @@ function indexPage() {
       <h2 class="h-sec" id="detail-h" data-rv>Салоны вблизи</h2>
     </div>
     <ul class="details">
-      ${details.map(({ c, ph, alt }, i) => `<li class="detail" data-rv style="--rv:${i}">
+      ${details.map(({ c, phs, alt }, i) => `<li class="detail" data-rv style="--rv:${i}">
         <a href="${carUrl(c)}">
-          <span class="detail-photo">${pic(p, ph, alt, { sizes: '(min-width: 1000px) 56vw, 80vw' })}</span>
+          <span class="detail-photo" data-flip>${phs.map((ph, k) => pic(p, ph, k ? '' : alt, { sizes: '(min-width: 1000px) 56vw, 80vw', attrs: `loading="lazy" decoding="async"${k ? ' aria-hidden="true"' : ' class="is-on"'}` })).join('')}</span>
           <span class="detail-cap"><span>${esc(c.title)}, ${c.year}</span><span class="detail-price">${price(c)}</span></span>
         </a>
       </li>`).join('\n      ')}
@@ -480,7 +510,7 @@ function catalogPage() {
     <p>Сбросьте фильтр или оставьте заявку на&nbsp;подбор: привезём автомобиль под заказ со&nbsp;всего мира.</p>
     <div class="actions">
       <button class="btn btn-line" type="button" data-reset-2>Сбросить фильтр</button>
-      <a class="btn btn-gold" href="index.html?service=order#services" data-order-link>Заявка на&nbsp;подбор</a>
+      <a class="btn btn-gold" href="order.html" data-order-link>Заявка на&nbsp;подбор</a>
     </div>
   </div>
 </div>
@@ -617,6 +647,42 @@ ${services(p)}`;
   return page({ p, title: 'Контакты БАЙКАРС: адрес, телефон, Telegram', description: `${SITE.street}, ${SITE.place}. Телефон ${SITE.phone}. ${SITE.hours}.`, current: 'contacts', body, cls: 'p-contacts', ld: dealerLd });
 }
 
+function tradePage() {
+  const p = '';
+  const body = services(p, { keys: ['trade', 'credit', 'buyout'], h: 'Обмен, кредит и&nbsp;выкуп', hTag: 'h1' }) + `
+<section class="sec" aria-label="Автомобили на площадке">
+  <div class="wrap page-cta">
+    <p class="sec-lead">Выбрать автомобиль для обмена или кредита можно в&nbsp;каталоге: там все машины на&nbsp;площадке с&nbsp;ценами и&nbsp;фото.</p>
+    <a class="btn btn-gold btn-lg" href="catalog.html">Открыть каталог</a>
+  </div>
+</section>`;
+  return page({ p, title: 'Обмен, кредит и выкуп, БАЙКАРС', description: `Обмен вашего автомобиля в зачёт покупки, автомобили с пробегом в кредит и выкуп легковых автомобилей. ${SITE.street}, ст. Грушевская.`, current: 'trade', body, cls: 'p-trade' });
+}
+
+function orderPage() {
+  const p = '';
+  const body = `<section class="hero order-page" aria-labelledby="order-page-h">
+  <div class="wrap hero-in">
+    <div class="hero-main">
+      <h1 class="hero-h" id="order-page-h">Автомобили под заказ со&nbsp;всего мира</h1>
+      <p class="hero-text">Если нужной машины нет в&nbsp;наличии, БАЙКАРС привезёт её под заказ. Напишите марку, модель и&nbsp;бюджет, менеджер перезвонит и&nbsp;всё обсудит.</p>
+      <div class="actions">
+        <a class="btn btn-gold btn-lg" href="${SITE.tgChat}">${ic(I.tg)}<span>Написать в&nbsp;Telegram</span></a>
+        <a class="btn btn-line btn-lg" href="${SITE.phoneHref}">${ic(I.phone)}<span>${SITE.phone}</span></a>
+      </div>
+    </div>
+    ${orderForm(p, 'o')}
+  </div>
+</section>
+<section class="sec" aria-label="Автомобили на площадке">
+  <div class="wrap page-cta">
+    <p class="sec-lead">Возможно, подходящая машина уже стоит на&nbsp;площадке.</p>
+    <a class="btn btn-line btn-lg" href="catalog.html">Смотреть каталог</a>
+  </div>
+</section>`;
+  return page({ p, title: 'Автомобили под заказ со всего мира, БАЙКАРС', description: `Привезём автомобиль под заказ со всего мира под ваш запрос и бюджет. ${SITE.street}, ст. Грушевская.`, current: 'order', body, cls: 'p-order' });
+}
+
 function privacyPage() {
   const p = '';
   const body = `<div class="wrap prose">
@@ -657,7 +723,9 @@ if (existsSync(join(ROOT, 'cars'))) for (const f of readdirSync(join(ROOT, 'cars
 out('index.html', indexPage());
 out('catalog.html', catalogPage());
 out('contacts.html', contactsPage());
+out('trade.html', tradePage());
+out('order.html', orderPage());
 out('privacy.html', privacyPage());
 out('404.html', notFoundPage());
 cars.forEach((c, i) => out(carUrl(c), carPage(c, i)));
-console.log(`built: ${cars.length} cars, ${cars.length + 5} pages, logo: ${logoFile || 'text wordmark'}`);
+console.log(`built: ${cars.length} cars, ${cars.length + 7} pages, logo: ${logoFile || 'text wordmark'}`);
