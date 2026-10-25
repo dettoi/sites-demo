@@ -5,3 +5,11 @@ clients/*/photos-2gis/
 clients/*/site/
 .claude/
 node_modules/
+
+# БАЙКАРС больше не публикуется на GitHub: сайт на Timeweb, исходники только локально
+sites/buycars/
+sites/buycars-lux/
+sites/buycars-v3/
+docs/buycars/
+docs/buycars-lux/
+docs/buycars-v3/
