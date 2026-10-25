@@ -394,7 +394,7 @@ html:has(.menu[open]) { overflow: hidden; }
   content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
   background: radial-gradient(70% 55% at 50% 45%, color-mix(in srgb, var(--wall) 55%, transparent), transparent 75%), var(--night);
 }
-.hero-logo { position: absolute; z-index: -1; left: 50%; top: 50%; width: min(100vw, 1600px); height: auto; max-width: none; transform: translate(-50%, -50%); opacity: 0.2; pointer-events: none; user-select: none; }
+.hero-logo { position: absolute; z-index: -1; left: 50%; top: 50%; width: min(100vw, 1600px); height: auto; max-width: none; translate: -50% -50%; opacity: 0.2; pointer-events: none; user-select: none; }
 .hero::after { /* scrim keeps the text readable over the mark */
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background: linear-gradient(to bottom, transparent 55%, var(--night) 100%), radial-gradient(60% 50% at 30% 55%, color-mix(in srgb, var(--night) 55%, transparent), transparent 80%);
@@ -411,7 +411,11 @@ html:has(.menu[open]) { overflow: hidden; }
 .order-h { font: 400 clamp(1.875rem, 1vw + 1.4rem, 2.5rem)/1 var(--f-display); color: var(--ink); text-wrap: balance; }
 .order-lead { color: var(--ink-2); font-size: var(--t-base); line-height: 1.45; }
 .hero-order .form-foot .btn { width: 100%; justify-content: center; }
-@media (max-width: 999px) { .hero { min-height: 0; align-items: start; } }
+@media (max-width: 999px) {
+  .hero { min-height: 0; align-items: start; }
+  /* the hero grows with the order form under it, so the mark is pinned behind the headline, not the middle */
+  .hero-logo { top: calc(var(--hdr) + clamp(48px, 9vw, 90px)); translate: -50% 0; width: 96vw; opacity: 0.3; }
+}
 /* inner pages: the order page reuses the hero split without the full-screen height */
 .order-page { min-height: 0; }
 .page-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; padding-block: clamp(24px, 3vw, 40px); border-top: 1px solid var(--line); }
@@ -428,7 +432,7 @@ html:has(.menu[open]) { overflow: hidden; }
   .hero-main > :nth-child(3) { animation-delay: 0.24s; }
   .hero-order { animation-delay: 0.32s; }
 }
-@keyframes hero-logo { from { opacity: 0; transform: translate(-50%, -48%) scale(1.04); } }
+@keyframes hero-logo { from { opacity: 0; transform: translateY(2%) scale(1.04); } }
 @keyframes hero-up { from { opacity: 0; transform: translateY(18px); } }
 
 /* ---------- price list (home) ---------- */
@@ -794,6 +798,10 @@ html:has(.menu[open]) { overflow: hidden; }
 .tier-win { position: relative; }
 .tier-win.is-ticking { overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10px, #000 calc(100% - 18px), transparent); mask-image: linear-gradient(to bottom, transparent, #000 10px, #000 calc(100% - 18px), transparent); }
 .tier-win.is-ticking .tier-cars > li:last-child { border-bottom: 1px solid var(--line); }
+/* touch screens: same window, but a native scroller the finger can flick, snapping car by car */
+.tier-win.is-scroll { overflow-y: auto; scroll-snap-type: y mandatory; scrollbar-width: none; -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 22px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 22px), transparent); }
+.tier-win.is-scroll::-webkit-scrollbar { display: none; }
+.tier-win.is-scroll .tier-cars > li { scroll-snap-align: start; }
 .tier-win.is-ticking .tier-cars { transition: transform 0.9s var(--ease); will-change: transform; }
 .tc { display: grid; grid-template-columns: 112px minmax(0, 1fr); grid-template-areas: "ph name" "ph meta" "ph price"; column-gap: 16px; row-gap: 4px; align-items: center; padding: 16px 0; text-decoration: none; }
 .tc-photo { grid-area: ph; align-self: start; overflow: hidden; border-radius: 10px; background: var(--night-2); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05); }

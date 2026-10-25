@@ -7,7 +7,7 @@ import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const V = 313; // версия css/js для сброса кэша
+const V = 314; // версия css/js для сброса кэша
 
 const SITE = {
   name: 'БАЙКАРС',

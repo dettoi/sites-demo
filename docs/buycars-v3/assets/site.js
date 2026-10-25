@@ -192,6 +192,37 @@
     const items = $$(':scope > li', list);
     const n = items.length;
     if (n <= 2 || reduce()) return;
+
+    // touch screens: the window is a real scroller, so a finger can flick through the column.
+    // No clones here (an endless list would trap the page scroll); at the end it rewinds to the top.
+    // A touch holds this column only, and it resumes a few seconds after the finger lifts.
+    if (matchMedia('(pointer: coarse)').matches) {
+      win.classList.add('is-scroll');
+      let onScreen = false, held = false, resume;
+      const fit = () => {
+        let h = 0;
+        for (let i = 0; i + 2 < n; i++) h = Math.max(h, items[i + 2].offsetTop - items[i].offsetTop);
+        h = Math.max(h, win.scrollHeight - items[n - 2].offsetTop);
+        win.style.height = `${h}px`;
+      };
+      fit();
+      addEventListener('load', fit, { once: true });
+      addEventListener('resize', fit);
+      win.addEventListener('touchstart', () => { held = true; clearTimeout(resume); }, { passive: true });
+      const release = () => { clearTimeout(resume); resume = setTimeout(() => { held = false; }, 3500); };
+      win.addEventListener('touchend', release, { passive: true });
+      win.addEventListener('touchcancel', release, { passive: true });
+      if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; }, { threshold: 0.2 }).observe(win);
+      setTimeout(() => setInterval(() => {
+        if (!onScreen || held || document.hidden) return;
+        const top = win.scrollTop;
+        const next = items.find((li) => li.offsetTop > top + 4);
+        const atEnd = top + win.clientHeight >= win.scrollHeight - 4;
+        win.scrollTo({ top: atEnd || !next ? 0 : next.offsetTop, behavior: 'smooth' });
+      }, 3200), t * 700);
+      return;
+    }
+
     items.forEach((li) => {
       const c = li.cloneNode(true);
       // clones must stay clickable (the window shows one of them next to the last original car);
