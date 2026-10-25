@@ -29,10 +29,22 @@
   const rv = $$('[data-rv]');
   if (!('IntersectionObserver' in window) || reduce()) rv.forEach((el) => el.classList.add('is-in'));
   else {
+    // section headings start fully clipped (clip-path), which Chrome treats as never intersecting,
+    // so for them the observer watches the parent block and reveals the heading through this map
+    const proxy = new Map();
     const io = new IntersectionObserver((es) => es.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
-    }), { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
-    rv.forEach((el) => io.observe(el));
+      if (!e.isIntersecting) return;
+      if (e.target.hasAttribute('data-rv')) e.target.classList.add('is-in');
+      (proxy.get(e.target) || []).forEach((el) => el.classList.add('is-in'));
+      io.unobserve(e.target);
+    }), { rootMargin: '0px 0px -6% 0px', threshold: 0 });
+    rv.forEach((el) => {
+      if (el.classList.contains('h-sec') && el.parentElement) {
+        const host = el.parentElement;
+        proxy.set(host, [...(proxy.get(host) || []), el]);
+        io.observe(host);
+      } else io.observe(el);
+    });
   }
 
   // ---------- odometer ----------
