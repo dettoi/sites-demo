@@ -193,19 +193,21 @@ address { font-style: normal; }
   transition: opacity 0.6s var(--ease), transform 0.8s var(--ease-soft);
 }
 .hdr.is-solid .hdr-in::before { opacity: 1; transform: none; }
-@media (max-width: 899px) {
-  .hdr-in { padding-inline: 24px; }
-  .hdr-in::before { left: 8px; right: 8px; }
-  .hdr .menu-btn { width: 40px; height: 40px; margin-right: -6px; }
+@media (max-width: 999px) {
+  /* logo and burger sit on the same 16px gutter as the page text; the island overhangs them by 8px */
+  :root { --hdr: 76px; }
+  .hdr-in::before { top: 6px; bottom: 6px; left: calc(var(--gut) - 8px); right: calc(var(--gut) - 8px); }
+  .hdr .menu-btn { width: 44px; height: 44px; }
 }
-.brand { display: inline-flex; flex-direction: column; text-decoration: none; line-height: 1; gap: 5px; padding: 6px 0; flex: none; }
+.brand { display: inline-flex; flex-direction: column; text-decoration: none; line-height: 1; gap: 5px; padding: 0; flex: none; }
 .brand-word { font: 650 1.0625rem/1 var(--f-text); letter-spacing: 0.3em; margin-right: -0.3em; }
 .brand-sub { font: 400 0.75rem/1 var(--f-text); letter-spacing: 0.08em; color: var(--gold); }
-.brand-img { height: 30px; width: auto; }
-@media (min-width: 900px) { .brand-img { height: 38px; } }
+/* as large as the bar allows: 50px on phones, 54px on desktop (the island is 64 / 72px tall) */
+.brand-img { height: 50px; width: auto; }
+@media (min-width: 1000px) { .brand-img { height: 54px; } }
 .brand-ftr .brand-img { height: 48px; }
-.hdr-nav { display: none; gap: 36px; margin-left: auto; }
-.hdr-nav a { position: relative; padding: 10px 0; color: var(--ink-2); text-decoration: none; font-weight: 500; font-size: 0.96875rem; transition: color 0.4s var(--ease); }
+.hdr-nav { display: none; gap: clamp(18px, 2.2vw, 36px); margin-left: auto; }
+.hdr-nav a { position: relative; padding: 10px 0; white-space: nowrap; color: var(--ink-2); text-decoration: none; font-weight: 500; font-size: 0.96875rem; transition: color 0.4s var(--ease); }
 .hdr-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform 0.6s var(--ease); }
 .hdr-nav a:hover, .hdr-nav a[aria-current] { color: var(--ink); }
 .hdr-nav a:hover::after, .hdr-nav a[aria-current]::after { transform: scaleX(1); transform-origin: left; }
@@ -213,11 +215,11 @@ address { font-style: normal; }
 .hdr-phone { display: none; font: 500 1rem/1 var(--f-text); letter-spacing: 0.01em; text-decoration: none; white-space: nowrap; font-variant-numeric: tabular-nums; transition: color 0.4s var(--ease); }
 .hdr-phone:hover { color: var(--gold-2); }
 .hdr-tg { display: none; }
-@media (min-width: 900px) {
-  :root { --hdr: 84px; }
+@media (min-width: 1000px) {
+  :root { --hdr: 96px; }
   .hdr-in::before { top: 12px; bottom: 12px; left: calc(var(--gut) - 22px); right: calc(var(--gut) - 22px); }
   .hdr-nav { display: flex; }
-  .hdr-end { margin-left: 40px; }
+  .hdr-end { margin-left: clamp(20px, 2.4vw, 40px); }
   .hdr-tg { display: inline-flex; }
   .hdr .menu-btn { display: none; }
 }
@@ -413,13 +415,9 @@ html:has(.menu[open]) { overflow: hidden; }
 .hero-order .form-foot .btn { width: 100%; justify-content: center; }
 @media (max-width: 999px) {
   .hero { min-height: 0; align-items: start; }
-  /* phones: no room for a watermark behind the text, so the banner mark stands on its own above the headline, full strength */
-  .hero { padding-top: calc(var(--hdr) + 20px); }
-  .hero-logo { position: relative; z-index: 0; left: auto; top: auto; translate: none; display: block; width: calc(100% - 2 * var(--gut)); max-width: 460px; margin: 0 auto clamp(20px, 6vw, 32px); opacity: 1; filter: drop-shadow(0 12px 28px rgba(3, 5, 12, 0.6)); }
-  .hero::after { background: linear-gradient(to bottom, transparent 70%, var(--night) 100%); }
-  /* one logo at a time: the small header mark waits until the big one has scrolled off */
-  .p-home .hdr .brand { transition: opacity 0.4s var(--ease); }
-  .p-home .hdr:not(.is-solid) .brand { opacity: 0; pointer-events: none; }
+  /* phones: the big logo lives in the header (top left, next to the menu), so no second mark in the hero */
+  .hero { padding-top: calc(var(--hdr) + 16px); }
+  .hero-logo { display: none; }
 }
 /* inner pages: the order page reuses the hero split without the full-screen height */
 .order-page { min-height: 0; }
@@ -761,7 +759,7 @@ html:has(.menu[open]) { overflow: hidden; }
 /* home: the hero already has these two buttons, so the dock waits until they scroll away, then slides up */
 .dock { transition: transform 0.45s var(--ease), opacity 0.3s var(--ease), visibility 0s; }
 .js .p-home .dock:not(.is-on) { transform: translateY(calc(100% + 24px)); opacity: 0; visibility: hidden; pointer-events: none; transition: transform 0.45s var(--ease), opacity 0.3s var(--ease), visibility 0s linear 0.45s; }
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   .dock { display: none; }
   .ftr { padding-bottom: 36px; }
 }
