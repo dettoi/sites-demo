@@ -7,7 +7,7 @@ import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const V = 314; // версия css/js для сброса кэша
+const V = 316; // версия css/js для сброса кэша
 
 const SITE = {
   name: 'БАЙКАРС',
@@ -424,7 +424,7 @@ function indexPage() {
       <ul class="tier-cars">
       ${cars.filter(fit).sort((a, b) => b.price_rub - a.price_rub).map((c) => `<li>
         <a class="tc" href="${carUrl(c)}" data-car>
-          <span class="tc-photo">${pic(p, c.photos[0], '', { sizes: '(min-width: 1000px) 28vw, 112px' })}</span>
+          <span class="tc-photo">${pic(p, c.photos[0], '', { sizes: '(min-width: 1000px) 28vw, 76vw' })}</span>
           <span class="tc-name">${esc(c.title)}</span>
           <span class="tc-meta"><b><span class="vh">Год </span>${c.year}</b> <i aria-hidden="true">·</i> <b><span class="vh">Пробег </span>${km(c.mileage_km)}</b> <i aria-hidden="true">·</i> <b><span class="vh">Двигатель </span>${esc(c.engine_short)}</b></span>
           <span class="tc-price">${price(c)}</span>
