@@ -7,7 +7,7 @@ import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const V = 317; // версия css/js для сброса кэша
+const V = 320; // версия css/js для сброса кэша
 
 const SITE = {
   name: 'БАЙКАРС',
@@ -386,8 +386,8 @@ function indexPage() {
   <img class="hero-logo" src="img/logo/logo.svg" alt="" width="2199" height="673" fetchpriority="high">
   <div class="wrap hero-in">
     <div class="hero-main">
-    <h1 class="hero-h" id="hero-h">БАЙКАРС продаёт автомобили с&nbsp;пробегом на&nbsp;своей площадке в&nbsp;Грушевской.</h1>
-    <p class="hero-text">Ваш автомобиль можно сдать в&nbsp;обмен, покупку оформить в&nbsp;кредит, а&nbsp;машину, которой нет в&nbsp;наличии, привезти под заказ со&nbsp;всего мира. Ещё мы выкупаем легковые автомобили.</p>
+    <h1 class="hero-h" id="hero-h">Наш автосалон БАЙКАРС продаёт автомобили с&nbsp;пробегом на&nbsp;своей площадке в&nbsp;Грушевской.</h1>
+    <p class="hero-text">Ваш автомобиль мы примем в&nbsp;обмен, покупку поможем оформить в&nbsp;кредит, а&nbsp;машину, которой нет в&nbsp;наличии, привезём под заказ со&nbsp;всего мира. Ещё мы выкупаем легковые автомобили.</p>
     <div class="actions">
       <a class="btn btn-gold btn-lg" href="${SITE.tgChat}">${ic(I.tg)}<span>Написать в&nbsp;Telegram</span></a>
       <a class="btn btn-line btn-lg" href="${SITE.phoneHref}">${ic(I.phone)}<span>${SITE.phone}</span></a>
@@ -440,7 +440,7 @@ function indexPage() {
 <section class="sec detail-sec" aria-labelledby="detail-h">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="h-sec" id="detail-h" data-rv>Салоны вблизи</h2>
+      <h2 class="h-sec" id="detail-h" data-rv>Фото салона</h2>
     </div>
     <ul class="details">
       ${details.map(({ c, phs, alt }, i) => `<li class="detail" data-rv style="--rv:${i}">
