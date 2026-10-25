@@ -430,24 +430,45 @@
       'year-desc': (a, b) => b.dataset.year - a.dataset.year || b.dataset.price - a.dataset.price,
       'km-asc': (a, b) => a.dataset.km - b.dataset.km,
     };
+    // price: preset chips, or a custom range from the two fields / two-thumb slider (band = 'custom', no chip checked)
+    const range = $('[data-range]', fForm);
+    const lo = Number(range.dataset.lo), hi = Number(range.dataset.hi);
+    const [rMin, rMax] = $$('input[type=range]', range);
+    const fill = $('[data-fill]', range);
+    const { pmin: tMin, pmax: tMax } = fForm.elements;
+    const bandBounds = { all: [lo, hi], lt2: [lo, 2e6], '2to5': [2e6, 5e6], gt5: [5e6, hi] };
+    const clamp = (n) => Math.min(hi, Math.max(lo, n));
+    const num = (v) => { const n = parseInt(String(v).replace(/\D/g, ''), 10); return Number.isFinite(n) ? n : null; };
+    const fmt = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    const setRange = (a, b) => {
+      [a, b] = [clamp(a), clamp(b)];
+      if (a > b) [a, b] = [b, a];
+      rMin.value = a; rMax.value = b;
+      tMin.value = fmt(a); tMax.value = fmt(b);
+      fill.style.left = `${((a - lo) / (hi - lo)) * 100}%`;
+      fill.style.right = `${100 - ((b - lo) / (hi - lo)) * 100}%`;
+    };
+    const toCustom = () => { [...fForm.elements.band].forEach((r) => { r.checked = false; }); };
     const read = () => {
       const fd = new FormData(fForm);
-      return { band: fd.get('band') || 'all', fuel: fd.get('fuel') || 'all', make: fd.get('make') || 'all', sort: fd.get('sort') || 'price-desc' };
+      return { band: fd.get('band') || 'custom', pmin: Number(rMin.value), pmax: Number(rMax.value), fuel: fd.get('fuel') || 'all', make: fd.get('make') || 'all', sort: fd.get('sort') || 'price-desc' };
     };
     const write = (s) => {
       for (const [k, v] of Object.entries(s)) {
         const el = fForm.elements[k];
-        if (!el) continue;
+        if (!el || k === 'pmin' || k === 'pmax') continue;
         if (el instanceof RadioNodeList) { const r = [...el].find((x) => x.value === v); if (r) r.checked = true; }
         else if ([...el.options].some((o) => o.value === v)) el.value = v;
       }
+      if (s.band === 'custom') { toCustom(); setRange(s.pmin, s.pmax); } else setRange(...(bandBounds[s.band] || bandBounds.all));
     };
+    const priceOk = (s, p) => (s.band === 'custom' ? p >= s.pmin && p <= s.pmax : s.band === 'all' || bandOf(p) === s.band);
     const render = () => {
       const s = read();
       [...cards].sort(sorters[s.sort] || sorters['price-desc']).forEach((c) => grid.append(c));
       let shown = 0;
       cards.forEach((c) => {
-        const on = (s.band === 'all' || bandOf(Number(c.dataset.price)) === s.band)
+        const on = priceOk(s, Number(c.dataset.price))
           && (s.fuel === 'all' || c.dataset.fuel === s.fuel)
           && (s.make === 'all' || c.dataset.make === s.make);
         c.hidden = !on;
@@ -459,6 +480,7 @@
       resetBtn.hidden = !dirty;
       const q = new URLSearchParams();
       for (const k of Object.keys(defaults)) if (s[k] !== defaults[k]) q.set(k, s[k]);
+      if (s.band === 'custom') { q.set('pmin', s.pmin); q.set('pmax', s.pmax); }
       history.replaceState(null, '', q.toString() ? `?${q}` : location.pathname);
     };
     const apply = (animate = true) => {
@@ -474,11 +496,27 @@
     const params = new URLSearchParams(location.search);
     const init = { ...defaults };
     for (const k of Object.keys(defaults)) if (params.get(k)) init[k] = params.get(k);
+    init.pmin = num(params.get('pmin')) ?? lo;
+    init.pmax = num(params.get('pmax')) ?? hi;
     write(init);
     render();
-    fForm.addEventListener('change', () => apply());
-    fForm.addEventListener('submit', (e) => e.preventDefault());
-    fForm.addEventListener('reset', () => setTimeout(() => apply(), 0));
+    // dragging: move the numbers and the list live, without the view transition
+    let raf = 0;
+    [rMin, rMax].forEach((r) => r.addEventListener('input', () => {
+      toCustom();
+      setRange(Number(rMin.value), Number(rMax.value));
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(render);
+    }));
+    const commitFields = () => { toCustom(); setRange(num(tMin.value) ?? lo, num(tMax.value) ?? hi); };
+    fForm.addEventListener('change', (e) => {
+      if (e.target.type === 'range') return; // already rendered on input
+      if (e.target === tMin || e.target === tMax) commitFields();
+      else if (e.target.name === 'band') setRange(...bandBounds[e.target.value]);
+      apply();
+    });
+    fForm.addEventListener('submit', (e) => { e.preventDefault(); if (document.activeElement === tMin || document.activeElement === tMax) { commitFields(); apply(); } });
+    fForm.addEventListener('reset', () => setTimeout(() => { setRange(lo, hi); apply(); }, 0));
     $('[data-reset-2]')?.addEventListener('click', () => fForm.reset());
   }
 

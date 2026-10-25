@@ -7,7 +7,8 @@ import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const V = 321; // версия css/js для сброса кэша
+const V = 324; // версия css/js для сброса кэша
+const SHOW_INTERIOR = false; // блок «Фото салона» на главной; true вернёт его (кадры выбраны в details ниже)
 
 const SITE = {
   name: 'БАЙКАРС',
@@ -369,16 +370,17 @@ function indexPage() {
   }).join('\n    ');
 
   // each tile flips through its own interior shots (picked by eye: no exterior, headlight or boot frames)
-  const details = [
+  const details = !SHOW_INTERIOR ? [] : [
     ['porsche-cayenne-coupe-2025', ['19', '18', '12', '11', '13'], 'Салон Porsche Cayenne Coupe'],
     ['bmw-z4-2009', ['11', '10', '17', '12'], 'Салон BMW Z4 с красной отделкой'],
     ['bmw-x5-2020', ['14', '11', '24', '15', '12'], 'Кожаные кресла BMW X5'],
     ['bmw-x6-2023', ['13', '21', '12', '15', '18'], 'Место водителя BMW X6'],
   ].map(([slug, ks, alt]) => {
     const c = cars.find((x) => x.slug === slug);
-    const phs = ks.map((k) => c.photos.find((x) => x.tg === k));
+    if (!c) return null;
+    const phs = ks.map((k) => c.photos.find((x) => x.tg === k)).filter(Boolean);
     return { c, phs, alt };
-  });
+  }).filter(Boolean);
   const minP = Math.min(...cars.map((c) => c.price_rub));
   const maxP = Math.max(...cars.map((c) => c.price_rub));
 
@@ -437,7 +439,7 @@ function indexPage() {
   </div>
 </section>
 
-<section class="sec detail-sec" aria-labelledby="detail-h">
+${details.length ? `<section class="sec detail-sec" aria-labelledby="detail-h">
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h-sec" id="detail-h" data-rv>Фото салона</h2>
@@ -451,7 +453,7 @@ function indexPage() {
       </li>`).join('\n      ')}
     </ul>
   </div>
-</section>
+</section>` : ''}
 
 ${services(p)}
 
@@ -464,6 +466,10 @@ function catalogPage() {
   const makes = [...new Set(cars.map((c) => c.make))].sort((a, b) => a.localeCompare(b));
   const fuels = [...new Set(cars.map((c) => c.fuel))];
   const chip = (name, value, label, checked) => `<label class="chip"><input type="radio" name="${name}" value="${value}"${checked ? ' checked' : ''}><span>${label}</span></label>`;
+  // slider bounds: cheapest and dearest car, rounded out to 100 000
+  const STEP = 50000;
+  const lo = Math.floor(Math.min(...cars.map((c) => c.price_rub)) / 1e5) * 1e5;
+  const hi = Math.ceil(Math.max(...cars.map((c) => c.price_rub)) / 1e5) * 1e5;
   const body = `<div class="wrap page-head">
   <h1 class="h-page">Каталог</h1>
   <p class="sec-lead">${cars.length} автомобилей на&nbsp;площадке. Наличие и&nbsp;цену лучше уточнить у&nbsp;менеджера перед приездом.</p>
@@ -474,6 +480,17 @@ function catalogPage() {
       <legend>Цена</legend>
       <div class="chips">
         ${chip('band', 'all', 'Любая', true)}${chip('band', 'lt2', 'До 2 млн', false)}${chip('band', '2to5', 'От 2 до 5 млн', false)}${chip('band', 'gt5', 'От 5 млн', false)}
+      </div>
+      <div class="p-range" data-range data-lo="${lo}" data-hi="${hi}">
+        <div class="p-fields">
+          <label class="p-field"><span>от</span><input type="text" inputmode="numeric" name="pmin" value="${groups(lo)}" autocomplete="off" aria-label="Цена от, рублей"><span aria-hidden="true">₽</span></label>
+          <label class="p-field"><span>до</span><input type="text" inputmode="numeric" name="pmax" value="${groups(hi)}" autocomplete="off" aria-label="Цена до, рублей"><span aria-hidden="true">₽</span></label>
+        </div>
+        <div class="p-track">
+          <span class="p-fill" data-fill></span>
+          <input type="range" min="${lo}" max="${hi}" step="${STEP}" value="${lo}" data-r="min" aria-label="Минимальная цена">
+          <input type="range" min="${lo}" max="${hi}" step="${STEP}" value="${hi}" data-r="max" aria-label="Максимальная цена">
+        </div>
       </div>
     </fieldset>
     <fieldset class="f-group">

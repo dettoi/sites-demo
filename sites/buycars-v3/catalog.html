@@ -15,7 +15,7 @@
 <link rel="preload" href="fonts/SofiaSansExtraCondensed-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/SofiaSans-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <style>html{background:#131726;color:#eef0f6;color-scheme:dark}:focus-visible{outline:2px solid #d6ef3a;outline-offset:3px}</style>
-<link rel="stylesheet" href="assets/site.css?v=321">
+<link rel="stylesheet" href="assets/site.css?v=324">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="p-catalog">
@@ -61,7 +61,7 @@
 <main id="main">
 <div class="wrap page-head">
   <h1 class="h-page">Каталог</h1>
-  <p class="sec-lead">10 автомобилей на&nbsp;площадке. Наличие и&nbsp;цену лучше уточнить у&nbsp;менеджера перед приездом.</p>
+  <p class="sec-lead">74 автомобилей на&nbsp;площадке. Наличие и&nbsp;цену лучше уточнить у&nbsp;менеджера перед приездом.</p>
 </div>
 <div class="wrap">
   <form class="filters" data-filters aria-label="Фильтр автомобилей">
@@ -69,6 +69,17 @@
       <legend>Цена</legend>
       <div class="chips">
         <label class="chip"><input type="radio" name="band" value="all" checked><span>Любая</span></label><label class="chip"><input type="radio" name="band" value="lt2"><span>До 2 млн</span></label><label class="chip"><input type="radio" name="band" value="2to5"><span>От 2 до 5 млн</span></label><label class="chip"><input type="radio" name="band" value="gt5"><span>От 5 млн</span></label>
+      </div>
+      <div class="p-range" data-range data-lo="200000" data-hi="17000000">
+        <div class="p-fields">
+          <label class="p-field"><span>от</span><input type="text" inputmode="numeric" name="pmin" value="200 000" autocomplete="off" aria-label="Цена от, рублей"><span aria-hidden="true">₽</span></label>
+          <label class="p-field"><span>до</span><input type="text" inputmode="numeric" name="pmax" value="17 000 000" autocomplete="off" aria-label="Цена до, рублей"><span aria-hidden="true">₽</span></label>
+        </div>
+        <div class="p-track">
+          <span class="p-fill" data-fill></span>
+          <input type="range" min="200000" max="17000000" step="50000" value="200000" data-r="min" aria-label="Минимальная цена">
+          <input type="range" min="200000" max="17000000" step="50000" value="17000000" data-r="max" aria-label="Максимальная цена">
+        </div>
       </div>
     </fieldset>
     <fieldset class="f-group">
@@ -80,7 +91,7 @@
     <div class="f-selects">
       <div class="f-sel">
         <label for="f-make">Марка</label>
-        <select id="f-make" name="make"><option value="all">Все марки</option><option value="BMW">BMW</option><option value="Lada">Lada</option><option value="Lexus">Lexus</option><option value="Mazda">Mazda</option><option value="Mercedes-Benz">Mercedes-Benz</option><option value="Porsche">Porsche</option><option value="Tesla">Tesla</option><option value="Toyota">Toyota</option></select>
+        <select id="f-make" name="make"><option value="all">Все марки</option><option value="Audi">Audi</option><option value="BMW">BMW</option><option value="Cadillac">Cadillac</option><option value="Citroen">Citroen</option><option value="Ford">Ford</option><option value="Genesis">Genesis</option><option value="Hyundai">Hyundai</option><option value="Kia">Kia</option><option value="Lada">Lada</option><option value="Lexus">Lexus</option><option value="Mazda">Mazda</option><option value="Mercedes-AMG">Mercedes-AMG</option><option value="Mercedes-Benz">Mercedes-Benz</option><option value="Mitsubishi">Mitsubishi</option><option value="Nissan">Nissan</option><option value="Omoda">Omoda</option><option value="Opel">Opel</option><option value="Porsche">Porsche</option><option value="Renault">Renault</option><option value="Skoda">Skoda</option><option value="SsangYong">SsangYong</option><option value="Suzuki">Suzuki</option><option value="Tesla">Tesla</option><option value="Toyota">Toyota</option><option value="Volkswagen">Volkswagen</option></select>
       </div>
       <div class="f-sel">
         <label for="f-sort">Порядок</label>
@@ -93,11 +104,21 @@
       </div>
     </div>
     <div class="f-foot">
-      <p class="f-count" role="status" aria-live="polite" data-count>Показаны все 10 автомобилей</p>
+      <p class="f-count" role="status" aria-live="polite" data-count>Показаны все 74 автомобилей</p>
       <button class="btn btn-quiet btn-sm" type="reset" data-reset hidden>Сбросить фильтр</button>
     </div>
   </form>
   <ul class="grid" data-grid>
+    <li class="card" data-rv data-price="17000000" data-year="2020" data-km="90000" data-make="Mercedes-AMG" data-fuel="бензин" data-slug="mercedes-amg-g-63-2020">
+  <a class="card-a" href="cars/mercedes-amg-g-63-2020.html" data-car>
+    <span class="card-photo"><img src="img/cars/mercedes-amg-g-63-2020/01.jpg" srcset="img/cars/mercedes-amg-g-63-2020/t/01.jpg 480w, img/cars/mercedes-amg-g-63-2020/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Mercedes-AMG G 63, 2020" decoding="async"><span class="card-count" aria-hidden="true">21 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Mercedes-AMG G 63</h2>
+      <span class="card-price">17 000 000 ₽</span>
+      <span class="card-meta">2020 г., 90 000 км, бензин, 585 л.с.</span>
+    </span>
+  </a>
+</li>
     <li class="card" data-rv data-price="16900000" data-year="2025" data-km="16000" data-make="Porsche" data-fuel="бензин" data-slug="porsche-cayenne-coupe-2025">
   <a class="card-a" href="cars/porsche-cayenne-coupe-2025.html" data-car>
     <span class="card-photo"><img src="img/cars/porsche-cayenne-coupe-2025/01.jpg" srcset="img/cars/porsche-cayenne-coupe-2025/t/01.jpg 480w, img/cars/porsche-cayenne-coupe-2025/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Porsche Cayenne Coupe, 2025" decoding="async"><span class="card-count" aria-hidden="true">14 фото</span></span>
@@ -118,13 +139,163 @@
     </span>
   </a>
 </li>
+    <li class="card" data-rv data-price="8500000" data-year="2021" data-km="72000" data-make="BMW" data-fuel="бензин" data-slug="bmw-x6-2021">
+  <a class="card-a" href="cars/bmw-x6-2021.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-x6-2021/01.jpg" srcset="img/cars/bmw-x6-2021/t/01.jpg 480w, img/cars/bmw-x6-2021/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW X6, 2021" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">19 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW X6</h2>
+      <span class="card-price">8 500 000 ₽</span>
+      <span class="card-meta">2021 г., 72 000 км, бензин, 612 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="6490000" data-year="2020" data-km="214000" data-make="BMW" data-fuel="дизель" data-slug="bmw-x6-2020">
+  <a class="card-a" href="cars/bmw-x6-2020.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-x6-2020/01.jpg" srcset="img/cars/bmw-x6-2020/t/01.jpg 480w, img/cars/bmw-x6-2020/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW X6, 2020" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">34 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW X6</h2>
+      <span class="card-price">6 490 000 ₽</span>
+      <span class="card-meta">2020 г., 214 000 км, дизель, 249 л.с.</span>
+    </span>
+  </a>
+</li>
     <li class="card" data-rv data-price="6200000" data-year="2020" data-km="167000" data-make="BMW" data-fuel="дизель" data-slug="bmw-x5-2020">
   <a class="card-a" href="cars/bmw-x5-2020.html" data-car>
-    <span class="card-photo"><img src="img/cars/bmw-x5-2020/01.jpg" srcset="img/cars/bmw-x5-2020/t/01.jpg 480w, img/cars/bmw-x5-2020/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW X5, 2020" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-photo"><img src="img/cars/bmw-x5-2020/01.jpg" srcset="img/cars/bmw-x5-2020/t/01.jpg 480w, img/cars/bmw-x5-2020/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW X5, 2020" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
     <span class="card-body">
       <h2 class="card-name">BMW X5</h2>
       <span class="card-price">6 200 000 ₽</span>
       <span class="card-meta">2020 г., 167 000 км, дизель, 249 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="4400000" data-year="2021" data-km="82000" data-make="BMW" data-fuel="бензин" data-slug="bmw-520i-2021">
+  <a class="card-a" href="cars/bmw-520i-2021.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-520i-2021/01.jpg" srcset="img/cars/bmw-520i-2021/t/01.jpg 480w, img/cars/bmw-520i-2021/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 520i, 2021" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">29 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 520i</h2>
+      <span class="card-price">4 400 000 ₽</span>
+      <span class="card-meta">2021 г., 82 000 км, бензин, 190 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="4400000" data-year="2021" data-km="41000" data-make="Genesis" data-fuel="дизель" data-slug="genesis-gv70-2021">
+  <a class="card-a" href="cars/genesis-gv70-2021.html" data-car>
+    <span class="card-photo"><img src="img/cars/genesis-gv70-2021/01.jpg" srcset="img/cars/genesis-gv70-2021/t/01.jpg 480w, img/cars/genesis-gv70-2021/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Genesis GV70, 2021" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Genesis GV70</h2>
+      <span class="card-price">4 400 000 ₽</span>
+      <span class="card-meta">2021 г., 41 000 км, дизель, 210 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="4300000" data-year="2020" data-km="90000" data-make="BMW" data-fuel="дизель" data-slug="bmw-520xdrive-2020">
+  <a class="card-a" href="cars/bmw-520xdrive-2020.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-520xdrive-2020/01.jpg" srcset="img/cars/bmw-520xdrive-2020/t/01.jpg 480w, img/cars/bmw-520xdrive-2020/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 520xDrive, 2020" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">15 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 520xDrive</h2>
+      <span class="card-price">4 300 000 ₽</span>
+      <span class="card-meta">2020 г., 90 000 км, дизель, 190 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3970000" data-year="2019" data-km="125000" data-make="Lexus" data-fuel="бензин" data-slug="lexus-rx-300-2019">
+  <a class="card-a" href="cars/lexus-rx-300-2019.html" data-car>
+    <span class="card-photo"><img src="img/cars/lexus-rx-300-2019/01.jpg" srcset="img/cars/lexus-rx-300-2019/t/01.jpg 480w, img/cars/lexus-rx-300-2019/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Lexus RX 300, 2019" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">16 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Lexus RX 300</h2>
+      <span class="card-price">3 970 000 ₽</span>
+      <span class="card-meta">2019 г., 125 000 км, бензин, 238 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3900000" data-year="2026" data-km="4700" data-make="Toyota" data-fuel="бензин" data-slug="toyota-rav4-2026">
+  <a class="card-a" href="cars/toyota-rav4-2026.html" data-car>
+    <span class="card-photo"><img src="img/cars/toyota-rav4-2026/01.jpg" srcset="img/cars/toyota-rav4-2026/t/01.jpg 480w, img/cars/toyota-rav4-2026/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Toyota RAV4, 2026" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">16 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Toyota RAV4</h2>
+      <span class="card-price">3 900 000 ₽</span>
+      <span class="card-meta">2026 г., 4 700 км, бензин, 172 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3900000" data-year="2022" data-km="179900" data-make="Toyota" data-fuel="дизель" data-slug="toyota-hilux-2022">
+  <a class="card-a" href="cars/toyota-hilux-2022.html" data-car>
+    <span class="card-photo"><img src="img/cars/toyota-hilux-2022/01.jpg" srcset="img/cars/toyota-hilux-2022/t/01.jpg 480w, img/cars/toyota-hilux-2022/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Toyota Hilux, 2022" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">20 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Toyota Hilux</h2>
+      <span class="card-price">3 900 000 ₽</span>
+      <span class="card-meta">2022 г., 179 900 км, дизель, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3700000" data-year="2017" data-km="113000" data-make="BMW" data-fuel="бензин" data-slug="bmw-730i-2017">
+  <a class="card-a" href="cars/bmw-730i-2017.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-730i-2017/01.jpg" srcset="img/cars/bmw-730i-2017/t/01.jpg 480w, img/cars/bmw-730i-2017/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 730i, 2017" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">31 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 730i</h2>
+      <span class="card-price">3 700 000 ₽</span>
+      <span class="card-meta">2017 г., 113 000 км, бензин, 249 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3400000" data-year="2017" data-km="196000" data-make="Mercedes-Benz" data-fuel="дизель" data-slug="mercedes-benz-gle-coupe-2017">
+  <a class="card-a" href="cars/mercedes-benz-gle-coupe-2017.html" data-car>
+    <span class="card-photo"><img src="img/cars/mercedes-benz-gle-coupe-2017/01.jpg" srcset="img/cars/mercedes-benz-gle-coupe-2017/t/01.jpg 480w, img/cars/mercedes-benz-gle-coupe-2017/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Mercedes-Benz GLE Coupe, 2017" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">17 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Mercedes-Benz GLE Coupe</h2>
+      <span class="card-price">3 400 000 ₽</span>
+      <span class="card-meta">2017 г., 196 000 км, дизель, 249 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3300000" data-year="2019" data-km="112000" data-make="BMW" data-fuel="дизель" data-slug="bmw-520-xdrive-2019">
+  <a class="card-a" href="cars/bmw-520-xdrive-2019.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-520-xdrive-2019/01.jpg" srcset="img/cars/bmw-520-xdrive-2019/t/01.jpg 480w, img/cars/bmw-520-xdrive-2019/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 520 xDrive, 2019" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">26 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 520 xDrive</h2>
+      <span class="card-price">3 300 000 ₽</span>
+      <span class="card-meta">2019 г., 112 000 км, дизель, 190 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3300000" data-year="2018" data-km="108000" data-make="BMW" data-fuel="бензин" data-slug="bmw-530i-2018">
+  <a class="card-a" href="cars/bmw-530i-2018.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-530i-2018/01.jpg" srcset="img/cars/bmw-530i-2018/t/01.jpg 480w, img/cars/bmw-530i-2018/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 530i, 2018" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">27 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 530i</h2>
+      <span class="card-price">3 300 000 ₽</span>
+      <span class="card-meta">2018 г., 108 000 км, бензин, 258 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3300000" data-year="2016" data-km="143000" data-make="Cadillac" data-fuel="бензин" data-slug="cadillac-escalade-2016">
+  <a class="card-a" href="cars/cadillac-escalade-2016.html" data-car>
+    <span class="card-photo"><img src="img/cars/cadillac-escalade-2016/01.jpg" srcset="img/cars/cadillac-escalade-2016/t/01.jpg 480w, img/cars/cadillac-escalade-2016/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Cadillac Escalade, 2016" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">15 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Cadillac Escalade</h2>
+      <span class="card-price">3 300 000 ₽</span>
+      <span class="card-meta">2016 г., 143 000 км, бензин, 426 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3200000" data-year="2019" data-km="130000" data-make="BMW" data-fuel="бензин" data-slug="bmw-320i-2019">
+  <a class="card-a" href="cars/bmw-320i-2019.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-320i-2019/01.jpg" srcset="img/cars/bmw-320i-2019/t/01.jpg 480w, img/cars/bmw-320i-2019/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 320i, 2019" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">15 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 320i</h2>
+      <span class="card-price">3 200 000 ₽</span>
+      <span class="card-meta">2019 г., 130 000 км, бензин, 190 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="3200000" data-year="2019" data-km="91000" data-make="BMW" data-fuel="бензин" data-slug="bmw-330i-2019">
+  <a class="card-a" href="cars/bmw-330i-2019.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-330i-2019/01.jpg" srcset="img/cars/bmw-330i-2019/t/01.jpg 480w, img/cars/bmw-330i-2019/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 330i, 2019" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">15 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 330i</h2>
+      <span class="card-price">3 200 000 ₽</span>
+      <span class="card-meta">2019 г., 91 000 км, бензин, 258 л.с.</span>
     </span>
   </a>
 </li>
@@ -148,6 +319,36 @@
     </span>
   </a>
 </li>
+    <li class="card" data-rv data-price="2800000" data-year="2014" data-km="201000" data-make="Porsche" data-fuel="бензин" data-slug="porsche-macan-2014">
+  <a class="card-a" href="cars/porsche-macan-2014.html" data-car>
+    <span class="card-photo"><img src="img/cars/porsche-macan-2014/01.jpg" srcset="img/cars/porsche-macan-2014/t/01.jpg 480w, img/cars/porsche-macan-2014/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Porsche Macan, 2014" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Porsche Macan</h2>
+      <span class="card-price">2 800 000 ₽</span>
+      <span class="card-meta">2014 г., 201 000 км, бензин, 340 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="2670000" data-year="2019" data-km="28000" data-make="Mazda" data-fuel="бензин" data-slug="mazda-3-2019">
+  <a class="card-a" href="cars/mazda-3-2019.html" data-car>
+    <span class="card-photo"><img src="img/cars/mazda-3-2019/01.jpg" srcset="img/cars/mazda-3-2019/t/01.jpg 480w, img/cars/mazda-3-2019/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Mazda 3, 2019" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">23 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Mazda 3</h2>
+      <span class="card-price">2 670 000 ₽</span>
+      <span class="card-meta">2019 г., 28 000 км, бензин, 183 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="2600000" data-year="2020" data-km="76000" data-make="Kia" data-fuel="бензин" data-slug="kia-sportage-2020">
+  <a class="card-a" href="cars/kia-sportage-2020.html" data-car>
+    <span class="card-photo"><img src="img/cars/kia-sportage-2020/01.jpg" srcset="img/cars/kia-sportage-2020/t/01.jpg 480w, img/cars/kia-sportage-2020/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Kia Sportage, 2020" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">25 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Kia Sportage</h2>
+      <span class="card-price">2 600 000 ₽</span>
+      <span class="card-meta">2020 г., 76 000 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
     <li class="card" data-rv data-price="2490000" data-year="2016" data-km="194000" data-make="Lexus" data-fuel="бензин" data-slug="lexus-nx200-2016">
   <a class="card-a" href="cars/lexus-nx200-2016.html" data-car>
     <span class="card-photo"><img src="img/cars/lexus-nx200-2016/02.jpg" srcset="img/cars/lexus-nx200-2016/t/02.jpg 480w, img/cars/lexus-nx200-2016/02.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Lexus NX200, 2016" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
@@ -155,6 +356,46 @@
       <h2 class="card-name">Lexus NX200</h2>
       <span class="card-price">2 490 000 ₽</span>
       <span class="card-meta">2016 г., 194 000 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="2300000" data-year="2014" data-km="205000" data-make="Mercedes-Benz" data-fuel="дизель" data-slug="mercedes-benz-gl-2014">
+  <a class="card-a" href="cars/mercedes-benz-gl-2014.html" data-car>
+    <span class="card-photo"><img src="img/cars/mercedes-benz-gl-2014/01.jpg" srcset="img/cars/mercedes-benz-gl-2014/t/01.jpg 480w, img/cars/mercedes-benz-gl-2014/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Mercedes-Benz GL, 2014" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">15 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Mercedes-Benz GL</h2>
+      <span class="card-price">2 300 000 ₽</span>
+      <span class="card-meta">2014 г., 205 000 км, дизель, 249 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="2290000" data-year="2020" data-km="129000" data-make="Hyundai" data-fuel="бензин" data-slug="hyundai-sonata-2020">
+  <a class="card-a" href="cars/hyundai-sonata-2020.html" data-car>
+    <span class="card-photo"><img src="img/cars/hyundai-sonata-2020/01.jpg" srcset="img/cars/hyundai-sonata-2020/t/01.jpg 480w, img/cars/hyundai-sonata-2020/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Hyundai Sonata, 2020" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">29 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Hyundai Sonata</h2>
+      <span class="card-price">2 290 000 ₽</span>
+      <span class="card-meta">2020 г., 129 000 км, бензин, 183 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="2200000" data-year="2018" data-km="177000" data-make="BMW" data-fuel="бензин" data-slug="bmw-230-2018">
+  <a class="card-a" href="cars/bmw-230-2018.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-230-2018/01.jpg" srcset="img/cars/bmw-230-2018/t/01.jpg 480w, img/cars/bmw-230-2018/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 230, 2018" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 230</h2>
+      <span class="card-price">2 200 000 ₽</span>
+      <span class="card-meta">2018 г., 177 000 км, бензин, 258 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="2100000" data-year="2021" data-km="104000" data-make="Skoda" data-fuel="бензин" data-slug="skoda-octavia-2021">
+  <a class="card-a" href="cars/skoda-octavia-2021.html" data-car>
+    <span class="card-photo"><img src="img/cars/skoda-octavia-2021/01.jpg" srcset="img/cars/skoda-octavia-2021/t/01.jpg 480w, img/cars/skoda-octavia-2021/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Skoda Octavia, 2021" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">14 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Skoda Octavia</h2>
+      <span class="card-price">2 100 000 ₽</span>
+      <span class="card-meta">2021 г., 104 000 км, бензин, 110 л.с.</span>
     </span>
   </a>
 </li>
@@ -168,6 +409,26 @@
     </span>
   </a>
 </li>
+    <li class="card" data-rv data-price="1890000" data-year="2018" data-km="97000" data-make="Hyundai" data-fuel="бензин" data-slug="hyundai-creta-2018">
+  <a class="card-a" href="cars/hyundai-creta-2018.html" data-car>
+    <span class="card-photo"><img src="img/cars/hyundai-creta-2018/01.jpg" srcset="img/cars/hyundai-creta-2018/t/01.jpg 480w, img/cars/hyundai-creta-2018/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Hyundai Creta, 2018" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">29 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Hyundai Creta</h2>
+      <span class="card-price">1 890 000 ₽</span>
+      <span class="card-meta">2018 г., 97 000 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1890000" data-year="2020" data-km="100000" data-make="Volkswagen" data-fuel="бензин" data-slug="volkswagen-t-cross-2020">
+  <a class="card-a" href="cars/volkswagen-t-cross-2020.html" data-car>
+    <span class="card-photo"><img src="img/cars/volkswagen-t-cross-2020/01.jpg" srcset="img/cars/volkswagen-t-cross-2020/t/01.jpg 480w, img/cars/volkswagen-t-cross-2020/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Volkswagen T-Cross, 2020" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">15 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Volkswagen T-Cross</h2>
+      <span class="card-price">1 890 000 ₽</span>
+      <span class="card-meta">2020 г., 100 000 км, бензин, 113 л.с.</span>
+    </span>
+  </a>
+</li>
     <li class="card" data-rv data-price="1800000" data-year="2012" data-km="256000" data-make="Toyota" data-fuel="дизель" data-slug="toyota-hilux-2012">
   <a class="card-a" href="cars/toyota-hilux-2012.html" data-car>
     <span class="card-photo"><img src="img/cars/toyota-hilux-2012/07.jpg" srcset="img/cars/toyota-hilux-2012/t/07.jpg 480w, img/cars/toyota-hilux-2012/07.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Toyota Hilux, 2012" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">11 фото</span></span>
@@ -175,6 +436,36 @@
       <h2 class="card-name">Toyota Hilux</h2>
       <span class="card-price">1 800 000 ₽</span>
       <span class="card-meta">2012 г., 256 000 км, дизель, 144 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1800000" data-year="2009" data-km="127000" data-make="Lexus" data-fuel="бензин" data-slug="lexus-rx-350-2009">
+  <a class="card-a" href="cars/lexus-rx-350-2009.html" data-car>
+    <span class="card-photo"><img src="img/cars/lexus-rx-350-2009/01.jpg" srcset="img/cars/lexus-rx-350-2009/t/01.jpg 480w, img/cars/lexus-rx-350-2009/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Lexus RX 350, 2009" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">26 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Lexus RX 350</h2>
+      <span class="card-price">1 800 000 ₽</span>
+      <span class="card-meta">2009 г., 127 000 км, бензин, 261 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1780000" data-year="2017" data-km="175000" data-make="Nissan" data-fuel="бензин" data-slug="nissan-qashqai-2017">
+  <a class="card-a" href="cars/nissan-qashqai-2017.html" data-car>
+    <span class="card-photo"><img src="img/cars/nissan-qashqai-2017/01.jpg" srcset="img/cars/nissan-qashqai-2017/t/01.jpg 480w, img/cars/nissan-qashqai-2017/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Nissan Qashqai, 2017" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">31 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Nissan Qashqai</h2>
+      <span class="card-price">1 780 000 ₽</span>
+      <span class="card-meta">2017 г., 175 000 км, бензин, 144 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1700000" data-year="2016" data-km="198000" data-make="BMW" data-fuel="бензин" data-slug="bmw-328i-2016">
+  <a class="card-a" href="cars/bmw-328i-2016.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-328i-2016/01.jpg" srcset="img/cars/bmw-328i-2016/t/01.jpg 480w, img/cars/bmw-328i-2016/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 328i, 2016" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">29 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 328i</h2>
+      <span class="card-price">1 700 000 ₽</span>
+      <span class="card-meta">2016 г., 198 000 км, бензин, 244 л.с.</span>
     </span>
   </a>
 </li>
@@ -188,6 +479,246 @@
     </span>
   </a>
 </li>
+    <li class="card" data-rv data-price="1690000" data-year="2019" data-km="103000" data-make="Renault" data-fuel="дизель" data-slug="renault-duster-2019">
+  <a class="card-a" href="cars/renault-duster-2019.html" data-car>
+    <span class="card-photo"><img src="img/cars/renault-duster-2019/01.jpg" srcset="img/cars/renault-duster-2019/t/01.jpg 480w, img/cars/renault-duster-2019/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Renault Duster, 2019" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">22 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Renault Duster</h2>
+      <span class="card-price">1 690 000 ₽</span>
+      <span class="card-meta">2019 г., 103 000 км, дизель, 109 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1650000" data-year="2018" data-km="156000" data-make="Volkswagen" data-fuel="бензин" data-slug="volkswagen-jetta-2018">
+  <a class="card-a" href="cars/volkswagen-jetta-2018.html" data-car>
+    <span class="card-photo"><img src="img/cars/volkswagen-jetta-2018/01.jpg" srcset="img/cars/volkswagen-jetta-2018/t/01.jpg 480w, img/cars/volkswagen-jetta-2018/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Volkswagen Jetta, 2018" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">14 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Volkswagen Jetta</h2>
+      <span class="card-price">1 650 000 ₽</span>
+      <span class="card-meta">2018 г., 156 000 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1600000" data-year="2022" data-km="110000" data-make="Citroen" data-fuel="бензин" data-slug="citroen-berlingo-2022">
+  <a class="card-a" href="cars/citroen-berlingo-2022.html" data-car>
+    <span class="card-photo"><img src="img/cars/citroen-berlingo-2022/01.jpg" srcset="img/cars/citroen-berlingo-2022/t/01.jpg 480w, img/cars/citroen-berlingo-2022/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Citroen Berlingo, 2022" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">20 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Citroen Berlingo</h2>
+      <span class="card-price">1 600 000 ₽</span>
+      <span class="card-meta">2022 г., 110 000 км, бензин, 114 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1600000" data-year="2021" data-km="84000" data-make="Skoda" data-fuel="бензин" data-slug="skoda-rapid-2021">
+  <a class="card-a" href="cars/skoda-rapid-2021.html" data-car>
+    <span class="card-photo"><img src="img/cars/skoda-rapid-2021/01.jpg" srcset="img/cars/skoda-rapid-2021/t/01.jpg 480w, img/cars/skoda-rapid-2021/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Skoda Rapid, 2021" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">12 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Skoda Rapid</h2>
+      <span class="card-price">1 600 000 ₽</span>
+      <span class="card-meta">2021 г., 84 000 км, бензин, 110 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1590000" data-year="2010" data-km="398000" data-make="Mercedes-Benz" data-fuel="бензин" data-slug="mercedes-benz-e-class-2010">
+  <a class="card-a" href="cars/mercedes-benz-e-class-2010.html" data-car>
+    <span class="card-photo"><img src="img/cars/mercedes-benz-e-class-2010/01.jpg" srcset="img/cars/mercedes-benz-e-class-2010/t/01.jpg 480w, img/cars/mercedes-benz-e-class-2010/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Mercedes-Benz E-Class, 2010" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">34 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Mercedes-Benz E-Class</h2>
+      <span class="card-price">1 590 000 ₽</span>
+      <span class="card-meta">2010 г., 398 000 км, бензин, 231 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1490000" data-year="2017" data-km="100300" data-make="Hyundai" data-fuel="бензин" data-slug="hyundai-solaris-2017">
+  <a class="card-a" href="cars/hyundai-solaris-2017.html" data-car>
+    <span class="card-photo"><img src="img/cars/hyundai-solaris-2017/01.jpg" srcset="img/cars/hyundai-solaris-2017/t/01.jpg 480w, img/cars/hyundai-solaris-2017/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Hyundai Solaris, 2017" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">27 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Hyundai Solaris</h2>
+      <span class="card-price">1 490 000 ₽</span>
+      <span class="card-meta">2017 г., 100 300 км, бензин, 123 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1490000" data-year="2017" data-km="166600" data-make="Mitsubishi" data-fuel="бензин" data-slug="mitsubishi-outlander-sport-2017">
+  <a class="card-a" href="cars/mitsubishi-outlander-sport-2017.html" data-car>
+    <span class="card-photo"><img src="img/cars/mitsubishi-outlander-sport-2017/01.jpg" srcset="img/cars/mitsubishi-outlander-sport-2017/t/01.jpg 480w, img/cars/mitsubishi-outlander-sport-2017/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Mitsubishi Outlander Sport, 2017" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">16 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Mitsubishi Outlander Sport</h2>
+      <span class="card-price">1 490 000 ₽</span>
+      <span class="card-meta">2017 г., 166 600 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1490000" data-year="2014" data-km="84000" data-make="Hyundai" data-fuel="бензин" data-slug="hyundai-ix35-2014">
+  <a class="card-a" href="cars/hyundai-ix35-2014.html" data-car>
+    <span class="card-photo"><img src="img/cars/hyundai-ix35-2014/01.jpg" srcset="img/cars/hyundai-ix35-2014/t/01.jpg 480w, img/cars/hyundai-ix35-2014/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Hyundai ix35, 2014" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">16 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Hyundai ix35</h2>
+      <span class="card-price">1 490 000 ₽</span>
+      <span class="card-meta">2014 г., 84 000 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1470000" data-year="2014" data-km="172000" data-make="Skoda" data-fuel="бензин" data-slug="skoda-octavia-2014">
+  <a class="card-a" href="cars/skoda-octavia-2014.html" data-car>
+    <span class="card-photo"><img src="img/cars/skoda-octavia-2014/01.jpg" srcset="img/cars/skoda-octavia-2014/t/01.jpg 480w, img/cars/skoda-octavia-2014/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Skoda Octavia, 2014" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">29 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Skoda Octavia</h2>
+      <span class="card-price">1 470 000 ₽</span>
+      <span class="card-meta">2014 г., 172 000 км, бензин, 180 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1420000" data-year="2012" data-km="184000" data-make="BMW" data-fuel="бензин" data-slug="bmw-528i-2012">
+  <a class="card-a" href="cars/bmw-528i-2012.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-528i-2012/01.jpg" srcset="img/cars/bmw-528i-2012/t/01.jpg 480w, img/cars/bmw-528i-2012/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 528i, 2012" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">24 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 528i</h2>
+      <span class="card-price">1 420 000 ₽</span>
+      <span class="card-meta">2012 г., 184 000 км, бензин, 245 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1350000" data-year="2022" data-km="68000" data-make="Omoda" data-fuel="бензин" data-slug="omoda-c5-2022">
+  <a class="card-a" href="cars/omoda-c5-2022.html" data-car>
+    <span class="card-photo"><img src="img/cars/omoda-c5-2022/01.jpg" srcset="img/cars/omoda-c5-2022/t/01.jpg 480w, img/cars/omoda-c5-2022/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Omoda C5, 2022" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">20 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Omoda C5</h2>
+      <span class="card-price">1 350 000 ₽</span>
+      <span class="card-meta">2022 г., 68 000 км, бензин, 147 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1350000" data-year="2017" data-km="136000" data-make="Kia" data-fuel="бензин" data-slug="kia-ceed-2017">
+  <a class="card-a" href="cars/kia-ceed-2017.html" data-car>
+    <span class="card-photo"><img src="img/cars/kia-ceed-2017/01.jpg" srcset="img/cars/kia-ceed-2017/t/01.jpg 480w, img/cars/kia-ceed-2017/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Kia Ceed, 2017" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">11 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Kia Ceed</h2>
+      <span class="card-price">1 350 000 ₽</span>
+      <span class="card-meta">2017 г., 136 000 км, бензин, 130 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1350000" data-year="2014" data-km="89000" data-make="Toyota" data-fuel="бензин" data-slug="toyota-corolla-2014">
+  <a class="card-a" href="cars/toyota-corolla-2014.html" data-car>
+    <span class="card-photo"><img src="img/cars/toyota-corolla-2014/01.jpg" srcset="img/cars/toyota-corolla-2014/t/01.jpg 480w, img/cars/toyota-corolla-2014/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Toyota Corolla, 2014" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">14 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Toyota Corolla</h2>
+      <span class="card-price">1 350 000 ₽</span>
+      <span class="card-meta">2014 г., 89 000 км, бензин, 140 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1290000" data-year="2011" data-km="174000" data-make="Kia" data-fuel="бензин" data-slug="kia-sportage-2011-2">
+  <a class="card-a" href="cars/kia-sportage-2011-2.html" data-car>
+    <span class="card-photo"><img src="img/cars/kia-sportage-2011-2/01.jpg" srcset="img/cars/kia-sportage-2011-2/t/01.jpg 480w, img/cars/kia-sportage-2011-2/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Kia Sportage, 2011" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">25 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Kia Sportage</h2>
+      <span class="card-price">1 290 000 ₽</span>
+      <span class="card-meta">2011 г., 174 000 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1250000" data-year="2015" data-km="152000" data-make="Kia" data-fuel="бензин" data-slug="kia-ceed-2015">
+  <a class="card-a" href="cars/kia-ceed-2015.html" data-car>
+    <span class="card-photo"><img src="img/cars/kia-ceed-2015/01.jpg" srcset="img/cars/kia-ceed-2015/t/01.jpg 480w, img/cars/kia-ceed-2015/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Kia Ceed, 2015" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">22 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Kia Ceed</h2>
+      <span class="card-price">1 250 000 ₽</span>
+      <span class="card-meta">2015 г., 152 000 км, бензин, 135 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1240000" data-year="2016" data-km="88000" data-make="Volkswagen" data-fuel="бензин" data-slug="volkswagen-polo-2016">
+  <a class="card-a" href="cars/volkswagen-polo-2016.html" data-car>
+    <span class="card-photo"><img src="img/cars/volkswagen-polo-2016/01.jpg" srcset="img/cars/volkswagen-polo-2016/t/01.jpg 480w, img/cars/volkswagen-polo-2016/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Volkswagen Polo, 2016" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">28 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Volkswagen Polo</h2>
+      <span class="card-price">1 240 000 ₽</span>
+      <span class="card-meta">2016 г., 88 000 км, бензин, 110 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1230000" data-year="2011" data-km="215000" data-make="Kia" data-fuel="бензин" data-slug="kia-sportage-2011">
+  <a class="card-a" href="cars/kia-sportage-2011.html" data-car>
+    <span class="card-photo"><img src="img/cars/kia-sportage-2011/01.jpg" srcset="img/cars/kia-sportage-2011/t/01.jpg 480w, img/cars/kia-sportage-2011/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Kia Sportage, 2011" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">26 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Kia Sportage</h2>
+      <span class="card-price">1 230 000 ₽</span>
+      <span class="card-meta">2011 г., 215 000 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1200000" data-year="2008" data-km="115000" data-make="Mitsubishi" data-fuel="бензин" data-slug="mitsubishi-outlander-2008">
+  <a class="card-a" href="cars/mitsubishi-outlander-2008.html" data-car>
+    <span class="card-photo"><img src="img/cars/mitsubishi-outlander-2008/01.jpg" srcset="img/cars/mitsubishi-outlander-2008/t/01.jpg 480w, img/cars/mitsubishi-outlander-2008/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Mitsubishi Outlander, 2008" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">12 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Mitsubishi Outlander</h2>
+      <span class="card-price">1 200 000 ₽</span>
+      <span class="card-meta">2008 г., 115 000 км, бензин, 170 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="1100000" data-year="2008" data-km="235000" data-make="Suzuki" data-fuel="бензин" data-slug="suzuki-vitara-2008">
+  <a class="card-a" href="cars/suzuki-vitara-2008.html" data-car>
+    <span class="card-photo"><img src="img/cars/suzuki-vitara-2008/01.jpg" srcset="img/cars/suzuki-vitara-2008/t/01.jpg 480w, img/cars/suzuki-vitara-2008/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Suzuki Vitara, 2008" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">12 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Suzuki Vitara</h2>
+      <span class="card-price">1 100 000 ₽</span>
+      <span class="card-meta">2008 г., 235 000 км, бензин, 140 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="990000" data-year="2011" data-km="238000" data-make="SsangYong" data-fuel="дизель" data-slug="ssangyong-rexton-2011">
+  <a class="card-a" href="cars/ssangyong-rexton-2011.html" data-car>
+    <span class="card-photo"><img src="img/cars/ssangyong-rexton-2011/01.jpg" srcset="img/cars/ssangyong-rexton-2011/t/01.jpg 480w, img/cars/ssangyong-rexton-2011/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="SsangYong Rexton, 2011" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">15 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">SsangYong Rexton</h2>
+      <span class="card-price">990 000 ₽</span>
+      <span class="card-meta">2011 г., 238 000 км, дизель, 163 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="990000" data-year="2017" data-km="119000" data-make="Ford" data-fuel="бензин" data-slug="ford-focus-iii-2017">
+  <a class="card-a" href="cars/ford-focus-iii-2017.html" data-car>
+    <span class="card-photo"><img src="img/cars/ford-focus-iii-2017/01.jpg" srcset="img/cars/ford-focus-iii-2017/t/01.jpg 480w, img/cars/ford-focus-iii-2017/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Ford Focus III, 2017" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">18 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Ford Focus III</h2>
+      <span class="card-price">990 000 ₽</span>
+      <span class="card-meta">2017 г., 119 000 км, бензин, 150 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="980000" data-year="2012" data-km="167000" data-make="Volkswagen" data-fuel="бензин" data-slug="volkswagen-golf-2012">
+  <a class="card-a" href="cars/volkswagen-golf-2012.html" data-car>
+    <span class="card-photo"><img src="img/cars/volkswagen-golf-2012/01.jpg" srcset="img/cars/volkswagen-golf-2012/t/01.jpg 480w, img/cars/volkswagen-golf-2012/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Volkswagen Golf, 2012" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">25 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Volkswagen Golf</h2>
+      <span class="card-price">980 000 ₽</span>
+      <span class="card-meta">2012 г., 167 000 км, бензин, 122 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="950000" data-year="2012" data-km="218000" data-make="Kia" data-fuel="бензин" data-slug="kia-rio-2012">
+  <a class="card-a" href="cars/kia-rio-2012.html" data-car>
+    <span class="card-photo"><img src="img/cars/kia-rio-2012/01.jpg" srcset="img/cars/kia-rio-2012/t/01.jpg 480w, img/cars/kia-rio-2012/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Kia Rio, 2012" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">12 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Kia Rio</h2>
+      <span class="card-price">950 000 ₽</span>
+      <span class="card-meta">2012 г., 218 000 км, бензин, 123 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="920000" data-year="2024" data-km="13800" data-make="Lada" data-fuel="бензин" data-slug="lada-niva-legend-2024">
+  <a class="card-a" href="cars/lada-niva-legend-2024.html" data-car>
+    <span class="card-photo"><img src="img/cars/lada-niva-legend-2024/01.jpg" srcset="img/cars/lada-niva-legend-2024/t/01.jpg 480w, img/cars/lada-niva-legend-2024/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Lada Niva Legend, 2024" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">12 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Lada Niva Legend</h2>
+      <span class="card-price">920 000 ₽</span>
+      <span class="card-meta">2024 г., 13 800 км, бензин, 83 л.с.</span>
+    </span>
+  </a>
+</li>
     <li class="card" data-rv data-price="890000" data-year="2023" data-km="28000" data-make="Lada" data-fuel="бензин" data-slug="lada-granta-2023">
   <a class="card-a" href="cars/lada-granta-2023.html" data-car>
     <span class="card-photo"><img src="img/cars/lada-granta-2023/05.jpg" srcset="img/cars/lada-granta-2023/t/05.jpg 480w, img/cars/lada-granta-2023/05.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Lada Granta, 2023" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">12 фото</span></span>
@@ -195,6 +726,126 @@
       <h2 class="card-name">Lada Granta</h2>
       <span class="card-price">890 000 ₽</span>
       <span class="card-meta">2023 г., 28 000 км, бензин, 90 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="890000" data-year="2007" data-km="420000" data-make="Nissan" data-fuel="дизель" data-slug="nissan-pathfinder-2007">
+  <a class="card-a" href="cars/nissan-pathfinder-2007.html" data-car>
+    <span class="card-photo"><img src="img/cars/nissan-pathfinder-2007/01.jpg" srcset="img/cars/nissan-pathfinder-2007/t/01.jpg 480w, img/cars/nissan-pathfinder-2007/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Nissan Pathfinder, 2007" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">14 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Nissan Pathfinder</h2>
+      <span class="card-price">890 000 ₽</span>
+      <span class="card-meta">2007 г., 420 000 км, дизель, 174 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="760000" data-year="2005" data-km="264000" data-make="BMW" data-fuel="бензин" data-slug="bmw-118i-2005">
+  <a class="card-a" href="cars/bmw-118i-2005.html" data-car>
+    <span class="card-photo"><img src="img/cars/bmw-118i-2005/01.jpg" srcset="img/cars/bmw-118i-2005/t/01.jpg 480w, img/cars/bmw-118i-2005/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="BMW 118i, 2005" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">24 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">BMW 118i</h2>
+      <span class="card-price">760 000 ₽</span>
+      <span class="card-meta">2005 г., 264 000 км, бензин, 136 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="750000" data-year="2010" data-km="260000" data-make="Skoda" data-fuel="бензин" data-slug="skoda-octavia-2010">
+  <a class="card-a" href="cars/skoda-octavia-2010.html" data-car>
+    <span class="card-photo"><img src="img/cars/skoda-octavia-2010/01.jpg" srcset="img/cars/skoda-octavia-2010/t/01.jpg 480w, img/cars/skoda-octavia-2010/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Skoda Octavia, 2010" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">25 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Skoda Octavia</h2>
+      <span class="card-price">750 000 ₽</span>
+      <span class="card-meta">2010 г., 260 000 км, бензин, 152 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="740000" data-year="2016" data-km="133000" data-make="Lada" data-fuel="бензин" data-slug="lada-granta-sport-2016">
+  <a class="card-a" href="cars/lada-granta-sport-2016.html" data-car>
+    <span class="card-photo"><img src="img/cars/lada-granta-sport-2016/01.jpg" srcset="img/cars/lada-granta-sport-2016/t/01.jpg 480w, img/cars/lada-granta-sport-2016/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Lada Granta Sport, 2016" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">26 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Lada Granta Sport</h2>
+      <span class="card-price">740 000 ₽</span>
+      <span class="card-meta">2016 г., 133 000 км, бензин, 118 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="697000" data-year="2013" data-km="209000" data-make="Kia" data-fuel="бензин" data-slug="kia-cerato-2013">
+  <a class="card-a" href="cars/kia-cerato-2013.html" data-car>
+    <span class="card-photo"><img src="img/cars/kia-cerato-2013/01.jpg" srcset="img/cars/kia-cerato-2013/t/01.jpg 480w, img/cars/kia-cerato-2013/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Kia Cerato, 2013" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">14 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Kia Cerato</h2>
+      <span class="card-price">697 000 ₽</span>
+      <span class="card-meta">2013 г., 209 000 км, бензин, 123 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="660000" data-year="1999" data-km="350000" data-make="Toyota" data-fuel="бензин" data-slug="toyota-rav4-1999">
+  <a class="card-a" href="cars/toyota-rav4-1999.html" data-car>
+    <span class="card-photo"><img src="img/cars/toyota-rav4-1999/01.jpg" srcset="img/cars/toyota-rav4-1999/t/01.jpg 480w, img/cars/toyota-rav4-1999/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Toyota RAV4, 1999" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">15 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Toyota RAV4</h2>
+      <span class="card-price">660 000 ₽</span>
+      <span class="card-meta">1999 г., 350 000 км, бензин, 130 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="645000" data-year="2010" data-km="256000" data-make="Skoda" data-fuel="бензин" data-slug="skoda-octavia-2010-2">
+  <a class="card-a" href="cars/skoda-octavia-2010-2.html" data-car>
+    <span class="card-photo"><img src="img/cars/skoda-octavia-2010-2/01.jpg" srcset="img/cars/skoda-octavia-2010-2/t/01.jpg 480w, img/cars/skoda-octavia-2010-2/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Skoda Octavia, 2010" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Skoda Octavia</h2>
+      <span class="card-price">645 000 ₽</span>
+      <span class="card-meta">2010 г., 256 000 км, бензин, 152 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="609000" data-year="2011" data-km="288000" data-make="Audi" data-fuel="бензин" data-slug="audi-a4-2011">
+  <a class="card-a" href="cars/audi-a4-2011.html" data-car>
+    <span class="card-photo"><img src="img/cars/audi-a4-2011/01.jpg" srcset="img/cars/audi-a4-2011/t/01.jpg 480w, img/cars/audi-a4-2011/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Audi A4, 2011" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">23 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Audi A4</h2>
+      <span class="card-price">609 000 ₽</span>
+      <span class="card-meta">2011 г., 288 000 км, бензин, 160 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="590000" data-year="2012" data-km="140000" data-make="Lada" data-fuel="бензин" data-slug="lada-niva-2012">
+  <a class="card-a" href="cars/lada-niva-2012.html" data-car>
+    <span class="card-photo"><img src="img/cars/lada-niva-2012/01.jpg" srcset="img/cars/lada-niva-2012/t/01.jpg 480w, img/cars/lada-niva-2012/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Lada Niva, 2012" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">13 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Lada Niva</h2>
+      <span class="card-price">590 000 ₽</span>
+      <span class="card-meta">2012 г., 140 000 км, бензин, 82 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="490000" data-year="2008" data-km="37000" data-make="Opel" data-fuel="бензин" data-slug="opel-corsa-2008">
+  <a class="card-a" href="cars/opel-corsa-2008.html" data-car>
+    <span class="card-photo"><img src="img/cars/opel-corsa-2008/01.jpg" srcset="img/cars/opel-corsa-2008/t/01.jpg 480w, img/cars/opel-corsa-2008/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Opel Corsa, 2008" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">11 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Opel Corsa</h2>
+      <span class="card-price">490 000 ₽</span>
+      <span class="card-meta">2008 г., 37 000 км, бензин, 60 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="375000" data-year="2005" data-km="346000" data-make="Hyundai" data-fuel="бензин" data-slug="hyundai-accent-2005">
+  <a class="card-a" href="cars/hyundai-accent-2005.html" data-car>
+    <span class="card-photo"><img src="img/cars/hyundai-accent-2005/01.jpg" srcset="img/cars/hyundai-accent-2005/t/01.jpg 480w, img/cars/hyundai-accent-2005/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Hyundai Accent, 2005" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">12 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Hyundai Accent</h2>
+      <span class="card-price">375 000 ₽</span>
+      <span class="card-meta">2005 г., 346 000 км, бензин, 102 л.с.</span>
+    </span>
+  </a>
+</li>
+    <li class="card" data-rv data-price="200000" data-year="1993" data-km="350000" data-make="Nissan" data-fuel="бензин" data-slug="nissan-sunny-1993">
+  <a class="card-a" href="cars/nissan-sunny-1993.html" data-car>
+    <span class="card-photo"><img src="img/cars/nissan-sunny-1993/01.jpg" srcset="img/cars/nissan-sunny-1993/t/01.jpg 480w, img/cars/nissan-sunny-1993/01.jpg 800w" sizes="(min-width: 1100px) 420px, (min-width: 700px) 46vw, 92vw" width="800" height="600" alt="Nissan Sunny, 1993" loading="lazy" decoding="async"><span class="card-count" aria-hidden="true">11 фото</span></span>
+    <span class="card-body">
+      <h2 class="card-name">Nissan Sunny</h2>
+      <span class="card-price">200 000 ₽</span>
+      <span class="card-meta">1993 г., 350 000 км, бензин, 80 л.с.</span>
     </span>
   </a>
 </li>
@@ -263,6 +914,6 @@
   <a class="btn btn-line" href="tel:+79044444535"><span class="btn-ic" aria-hidden="true"><svg class="ic ic-phone" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a2.5 2.5 0 0 1-2.7 2.5C9.6 19 5 14.4 4.5 6.2A2.5 2.5 0 0 1 5 3.5Z"/></svg></span><span>Позвонить</span></a>
   <a class="btn btn-gold" href="https://t.me/+79044444535"><span class="btn-ic" aria-hidden="true"><svg class="ic ic-tg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.6 14.2l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.2-1.7-4.4Z"/></svg></span><span>Telegram</span></a>
 </nav>
-<script src="assets/site.js?v=321" defer></script>
+<script src="assets/site.js?v=324" defer></script>
 </body>
 </html>
