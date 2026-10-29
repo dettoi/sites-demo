@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1f5fa6">
+<title>Мультисервис: онлайн-запись (демо)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Golos+Text:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--focus, currentColor); outline-offset: 2px; }</style>
+</head>
+<body data-route="home">
+<a class="vh" href="#/" data-scroll="main">К содержимому</a>
+<div class="demobar"><b>Демо-версия</b><a id="demo-link" href="#/owner">Кабинет владельца</a></div>
+<main id="main">
+  <div id="home"></div>
+  <div id="owner" hidden></div>
+</main>
+<nav class="dock" id="dock" aria-label="Быстрые действия"></nav>
+
+<div class="book" id="book" hidden>
+  <div class="book__scrim" data-act="close-book"></div>
+  <section class="book__panel" role="dialog" aria-modal="true" aria-labelledby="bk-title">
+    <header class="book__head">
+      <button class="ibtn" type="button" id="bk-back" data-act="bk-back" aria-label="Назад" style="visibility:hidden">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <div class="book__t"><span class="book__count" id="bk-count"></span><h2 class="book__title" id="bk-title"></h2></div>
+      <button class="ibtn" type="button" data-act="close-book" aria-label="Закрыть запись">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </header>
+    <div class="steps" id="bk-steps" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="book__body" id="bk-body"></div>
+    <footer class="book__foot" id="bk-foot"></footer>
+  </section>
+</div>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet__scrim" data-act="sheet-close"></div>
+  <section class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <header class="sheet__head"><h2 class="sheet__title" id="sheet-title"></h2>
+      <button class="ibtn" type="button" data-act="sheet-close" aria-label="Закрыть">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></header>
+    <div class="sheet__body" id="sheet-body"></div>
+    <footer class="sheet__foot" id="sheet-foot" hidden></footer>
+  </section>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Просмотр фото">
+  <div class="lb__bar"><span id="lb-n"></span>
+    <button class="ibtn" type="button" id="lb-close" data-act="lb-close" aria-label="Закрыть фото">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <figure class="lb__fig"><img id="lb-img" alt="">
+    <button class="ibtn lb__prev" type="button" data-act="lb-prev" aria-label="Предыдущее фото"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button class="ibtn lb__next" type="button" data-act="lb-next" aria-label="Следующее фото"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </figure>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:16px">Для работы демо нужен JavaScript.</p></noscript>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
